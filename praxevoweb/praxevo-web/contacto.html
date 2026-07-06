@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — PraxEvo</title>
+<meta name="description" content="Agenda una llamada o escríbenos sobre PraxEvo Academy o PraxEvo Consulting.">
+<link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+<header class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 44 52" fill="none"><path d="M3 26 L22 5 L41 26" stroke="#00C896" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 47 L22 26 L41 47" stroke="#0D2B4E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="brand-wordmark">Prax<span class="evo">Evo</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="cursos.html">Academy</a>
+      <a href="consultoria.html">Consulting</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacto.html" class="active">Contacto</a>
+      <a class="nav-cta" href="cursos.html">Ver cursos</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero hero-tight">
+    <div class="hero-inner">
+      <h1>Hablemos de tu <span class="accent">operación</span></h1>
+      <p class="lede">Cuéntanos sobre tu negocio y te contactamos para agendar una llamada de diagnóstico o resolver dudas sobre los cursos.</p>
+    </div>
+  </section>
+
+  <section class="section max-w-640">
+
+    <!--
+      IMPORTANTE (ver README.md):
+      Este es un sitio estático — no tiene backend propio. El atributo `action`
+      de abajo debe reemplazarse por el endpoint real de tu proveedor de
+      formularios (Netlify Forms, Formspree, un servicio propio, etc.) antes
+      de publicar el sitio. Mientras diga "REEMPLAZAR_ENDPOINT_FORMULARIO",
+      main.js bloqueará el envío y mostrará un aviso en pantalla en vez de
+      fallar silenciosamente.
+    -->
+    <form id="contact-form" action="REEMPLAZAR_ENDPOINT_FORMULARIO" method="POST" novalidate>
+
+      <!-- Honeypot anti-spam: campo oculto que solo los bots completan -->
+      <div class="hp-field" aria-hidden="true">
+        <label for="_gotcha">No llenar este campo</label>
+        <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+      </div>
+
+      <div class="form-field">
+        <label for="name">Nombre completo *</label>
+        <input type="text" id="name" name="name" required autocomplete="name">
+      </div>
+
+      <div class="form-field">
+        <label for="email">Correo electrónico *</label>
+        <input type="email" id="email" name="email" required autocomplete="email">
+      </div>
+
+      <div class="form-field">
+        <label for="company">Empresa</label>
+        <input type="text" id="company" name="company" autocomplete="organization">
+      </div>
+
+      <div class="form-field">
+        <label for="interest">Me interesa</label>
+        <select id="interest" name="interest">
+          <option value="academy">PraxEvo Academy (cursos)</option>
+          <option value="consulting">PraxEvo Consulting (consultoría)</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label for="message">Mensaje *</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+
+      <div class="form-consent">
+        <input type="checkbox" id="consent" name="consent" required>
+        <label for="consent">He leído y autorizo el tratamiento de mis datos personales conforme a la <a href="legal/privacidad.html" target="_blank">Política de Tratamiento de Datos Personales</a> de PraxEvo, según la Ley 1581 de 2012. *</label>
+      </div>
+
+      <button class="btn btn-primary" type="submit">Enviar mensaje</button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+      <p class="form-note mt-32">No solicitamos ni almacenamos datos de tarjetas o medios de pago en este formulario. Los pagos de cursos se procesan exclusivamente en Hotmart.</p>
+    </form>
+
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <span class="brand-wordmark">Prax<span class="evo">Evo</span></span>
+      <p class="footer-tagline">Del método a los resultados. Cursos online y consultoría en CX y operaciones para pymes de LatAm.</p>
+    </div>
+    <div>
+      <h4>Navegación</h4>
+      <ul>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="cursos.html">Academy</a></li>
+        <li><a href="consultoria.html">Consulting</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="legal/privacidad.html">Política de Privacidad</a></li>
+        <li><a href="legal/terminos.html">Términos y Condiciones</a></li>
+        <li><a href="legal/cookies.html">Política de Cookies</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> PraxEvo. Todos los derechos reservados.</span>
+    <span>@praxevo · Colombia</span>
+  </div>
+</footer>
+
+<div class="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros para mejorar tu experiencia. Puedes revisar los detalles en nuestra <a href="legal/cookies.html">Política de Cookies</a>.</p>
+  <div class="cookie-actions">
+    <button class="reject" type="button">Rechazar</button>
+    <button class="accept" type="button">Aceptar</button>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

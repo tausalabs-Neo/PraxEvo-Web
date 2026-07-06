@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — PraxEvo</title>
+<meta name="description" content="Ideas prácticas de CX y operaciones para pymes, basadas en casos reales de aerolíneas y fintech.">
+<link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+<header class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 44 52" fill="none"><path d="M3 26 L22 5 L41 26" stroke="#00C896" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 47 L22 26 L41 47" stroke="#0D2B4E" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="brand-wordmark">Prax<span class="evo">Evo</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="cursos.html">Academy</a>
+      <a href="consultoria.html">Consulting</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="contacto.html">Contacto</a>
+      <a class="nav-cta" href="cursos.html">Ver cursos</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero hero-tight">
+    <div class="hero-inner">
+      <h1>Blog <span class="accent">PraxEvo</span></h1>
+      <p class="lede">Ideas directas sobre CX y operaciones, con casos reales de aerolíneas y fintech adaptados a la escala de una pyme. Sin relleno, sin motivación vacía.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="grid grid-3">
+      <article class="card accent-top-green">
+        <p class="article-meta">CX · 4 min de lectura</p>
+        <h4>5 errores de CX que te cuestan clientes sin que lo sepas</h4>
+        <p>El 40% de las quejas no vienen del problema en sí — vienen de no saber cuándo te van a responder. Así se diagnostica en 30 minutos.</p>
+        <p class="mt-32"><a href="contacto.html">Habla con nosotros sobre esto →</a></p>
+      </article>
+      <article class="card accent-top-navy">
+        <p class="article-meta">Operaciones · 6 min de lectura</p>
+        <h4>Escalar sin que el servicio se caiga: la lección de 2M de transacciones/mes</h4>
+        <p>Con un equipo de CX de 40 personas procesábamos 2 millones de transacciones mensuales en una fintech. Esto aprendimos sobre escalabilidad real.</p>
+        <p class="mt-32"><a href="contacto.html">Habla con nosotros sobre esto →</a></p>
+      </article>
+      <article class="card accent-top-orange">
+        <p class="article-meta">Método · 3 min de lectura</p>
+        <h4>Por qué "medir la satisfacción" no sirve si no tienes un SLA</h4>
+        <p>72 horas de espera sin protocolo de escalación: así se pierde una venta que ya estaba ganada. La estructura importa más que la intención.</p>
+        <p class="mt-32"><a href="contacto.html">Habla con nosotros sobre esto →</a></p>
+      </article>
+    </div>
+    <p class="text-center mt-32 muted">Más artículos, próximamente. Síguenos en <a href="https://instagram.com/praxevo" target="_blank" rel="noopener">@praxevo</a>.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <span class="brand-wordmark">Prax<span class="evo">Evo</span></span>
+      <p class="footer-tagline">Del método a los resultados. Cursos online y consultoría en CX y operaciones para pymes de LatAm.</p>
+    </div>
+    <div>
+      <h4>Navegación</h4>
+      <ul>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="cursos.html">Academy</a></li>
+        <li><a href="consultoria.html">Consulting</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="legal/privacidad.html">Política de Privacidad</a></li>
+        <li><a href="legal/terminos.html">Términos y Condiciones</a></li>
+        <li><a href="legal/cookies.html">Política de Cookies</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> PraxEvo. Todos los derechos reservados.</span>
+    <span>@praxevo · Colombia</span>
+  </div>
+</footer>
+
+<div class="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros para mejorar tu experiencia. Puedes revisar los detalles en nuestra <a href="legal/cookies.html">Política de Cookies</a>.</p>
+  <div class="cookie-actions">
+    <button class="reject" type="button">Rechazar</button>
+    <button class="accept" type="button">Aceptar</button>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
