@@ -87,10 +87,10 @@
           if (window.turnstile) window.turnstile.reset();
           setStatus("success", "¡Gracias! Un miembro del equipo de PraxEvo te contactará en menos de 48 horas hábiles.");
         } else {
-          setStatus("error", payload.error || "No pudimos enviar tu mensaje. Intenta de nuevo o escríbenos a hola@praxevo.com.");
+          setStatus("error", payload.error || "No pudimos enviar tu mensaje. Intenta de nuevo o escríbenos a hola@somospraxevo.com.");
         }
       } catch (err) {
-        setStatus("error", "Error de conexión. Intenta de nuevo o escríbenos a hola@praxevo.com.");
+        setStatus("error", "Error de conexión. Intenta de nuevo o escríbenos a hola@somospraxevo.com.");
       } finally {
         submitBtn.disabled = false;
         submitBtn.textContent = "Enviar mensaje";

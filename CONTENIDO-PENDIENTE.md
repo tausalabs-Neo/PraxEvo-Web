@@ -1,7 +1,8 @@
 # Contenido pendiente antes de publicar
 
-El sitio está funcionalmente completo, pero **no debe publicarse tal cual** hasta reemplazar lo
-siguiente. Todo lo listado aquí aparece también marcado en la página correspondiente con una
+**El sitio ya está publicado y en vivo en https://somospraxevo.com** (Cloudflare Pages, SSL
+activo). Sigue siendo funcional para visitar hoy mismo, pero **no debe promocionarse ampliamente**
+hasta reemplazar lo siguiente. Todo lo listado aquí aparece también marcado en la página correspondiente con una
 nota naranja ("Contenido de ejemplo — pendiente de reemplazo") o un badge "Precio pendiente" /
 "Fotos pendientes", para que nadie lo confunda con un dato real.
 
@@ -27,14 +28,24 @@ nota naranja ("Contenido de ejemplo — pendiente de reemplazo") o un badge "Pre
   Se decidió conscientemente **romper esa regla en el sitio web** para humanizar la marca —
   confirmar que ambos fundadores están de acuerdo con tener su foto pública en el sitio.
 
-## 4. Cuentas externas que debes crear tú (no puedo crearlas por ti)
-- [ ] Cuenta de **Cloudflare** (gratis) + proyecto de Pages → dame los nameservers asignados.
-- [ ] Cuenta de **Resend** (resend.com, gratis hasta 3,000 correos/mes) → verifica el dominio
-      somospraxevo.com allí y dame la API key.
-- [ ] **Cloudflare Turnstile** → crea un widget para somospraxevo.com y dame el *site key* y el
-      *secret key*.
-- [ ] **Cloudflare Email Routing** → activar y crear la regla hola@praxevo.com →
-      tausa.labs@gmail.com.
+## 4. Cuentas externas — estado
+
+- [x] **Cloudflare**: cuenta creada, dominio `somospraxevo.com` migrado (nameservers en
+      Cloudflare), sitio desplegado y sirviendo en https://somospraxevo.com (SSL activo).
+- [x] **Cloudflare Turnstile**: widget creado, site key y secret key configurados en el sitio
+      y en el proyecto de Pages.
+- [x] **Cloudflare Email Routing**: activo. `hola@somospraxevo.com` reenvía a
+      `tausa.labs@gmail.com`.
+- [x] **Cloudflare Workers KV**: namespace `praxevo_contact_rl` creado y enlazado para el
+      rate limiting del formulario.
+- [ ] **Resend** (resend.com, gratis hasta 3,000 correos/mes) — **pendiente, no creada aún**.
+      Sin esto, el formulario de contacto valida todo correctamente pero **no puede enviar el
+      correo final** (falla con un mensaje de error genérico al intentar enviar). Pasos:
+      1. Crear cuenta en resend.com.
+      2. Verificar el dominio `somospraxevo.com` allí (agrega registros DNS — como el dominio
+         ya está en Cloudflare, se agregan fácilmente desde el dashboard de DNS).
+      3. Generar una API key y dármela para configurarla como secreto `RESEND_API_KEY` en el
+         proyecto de Pages (`praxevo-site` → Settings → Variables and secrets).
 
 ## 5. Revisión legal
 - [ ] Un abogado debe revisar `src/privacidad.njk` y `src/terminos.njk` antes de publicar —

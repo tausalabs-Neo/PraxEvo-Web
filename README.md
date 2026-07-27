@@ -29,7 +29,7 @@ y define variables de entorno locales en un archivo `.dev.vars` (no se sube a gi
 ```
 RESEND_API_KEY=tu_api_key_de_resend
 TURNSTILE_SECRET_KEY=tu_secret_key_de_turnstile
-CONTACT_TO_EMAIL=hola@praxevo.com
+CONTACT_TO_EMAIL=hola@somospraxevo.com
 CONTACT_FROM_EMAIL=PraxEvo <no-reply@somospraxevo.com>
 ```
 
@@ -64,7 +64,7 @@ Production y Preview) apuntando a ese namespace.
 | `RESEND_API_KEY` | Secreto | API key de resend.com (verifica el dominio somospraxevo.com allí primero) |
 | `TURNSTILE_SECRET_KEY` | Secreto | Secret key del widget de Turnstile |
 | `TURNSTILE_SITE_KEY` | Variable de build | Site key del widget de Turnstile (se usa en el HTML) |
-| `CONTACT_TO_EMAIL` | Variable | `hola@praxevo.com` |
+| `CONTACT_TO_EMAIL` | Variable | `hola@somospraxevo.com` |
 | `CONTACT_FROM_EMAIL` | Variable | `PraxEvo <no-reply@somospraxevo.com>` (dominio verificado en Resend) |
 
 `TURNSTILE_SITE_KEY` debe estar disponible en **build time** (Eleventy la lee en
@@ -72,9 +72,9 @@ Production y Preview) apuntando a ese namespace.
 del proyecto de Pages, o el sitio se construirá con la site key de pruebas de Cloudflare (que
 siempre aprueba, y no bloquea nada realmente).
 
-### 5. Cloudflare Email Routing (para que hola@praxevo.com funcione)
+### 5. Cloudflare Email Routing (para que hola@somospraxevo.com funcione)
 1. Dashboard → tu dominio → **Email → Email Routing** → Enable.
-2. Crea la regla: `hola@praxevo.com` → reenviar a `tausa.labs@gmail.com`.
+2. Crea la regla: `hola@somospraxevo.com` → reenviar a `tausa.labs@gmail.com`.
 3. Verifica la dirección de destino (Cloudflare envía un correo de confirmación).
 
 ### 6. Desplegar

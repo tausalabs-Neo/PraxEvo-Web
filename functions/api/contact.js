@@ -3,7 +3,7 @@
 // Bindings expected (set in Cloudflare Pages dashboard → Settings → Environment variables / KV):
 //   RESEND_API_KEY        (secret)  — api key from resend.com
 //   TURNSTILE_SECRET_KEY  (secret)  — secret key from the Turnstile widget
-//   CONTACT_TO_EMAIL      (env var) — destination inbox, e.g. hola@praxevo.com
+//   CONTACT_TO_EMAIL      (env var) — destination inbox, e.g. hola@somospraxevo.com
 //   CONTACT_FROM_EMAIL    (env var) — verified sender, e.g. "PraxEvo <no-reply@somospraxevo.com>"
 //   CONTACT_RL            (KV namespace binding) — used for per-IP rate limiting
 //

@@ -9,9 +9,14 @@ pages_build_output_dir = "_site"
 # for both Production and Preview).
 [[kv_namespaces]]
 binding = "CONTACT_RL"
-id = "REPLACE_WITH_KV_NAMESPACE_ID"
+id = "841090f7c1c54c03ad64ec185dbd08d1"
 
-# Secrets (RESEND_API_KEY, TURNSTILE_SECRET_KEY) and plain env vars
-# (CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL, TURNSTILE_SITE_KEY) are NOT set here —
-# configure them in the Cloudflare Pages dashboard → Settings → Environment variables,
-# or with `npx wrangler pages secret put <NAME>`. Never commit real secrets to this file.
+[vars]
+CONTACT_TO_EMAIL = "hola@somospraxevo.com"
+CONTACT_FROM_EMAIL = "PraxEvo <no-reply@somospraxevo.com>"
+
+# Secrets (RESEND_API_KEY, TURNSTILE_SECRET_KEY) are NOT set here — configure them
+# in the Cloudflare Pages dashboard → Settings → Variables and secrets, or with
+# `npx wrangler pages secret put <NAME>`. Never commit real secrets to this file.
+# TURNSTILE_SITE_KEY is a build-time value read by .eleventy.js, not a runtime var —
+# export it as an env var before `npm run build`.
