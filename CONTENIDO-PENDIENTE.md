@@ -56,3 +56,25 @@ nota naranja ("Contenido de ejemplo — pendiente de reemplazo") o un badge "Pre
       se activa desde el dashboard de Cloudflare una vez el dominio esté ahí, sin tocar código.
 - [ ] Redes sociales: confirmar que @praxevo es el handle correcto en Instagram/TikTok/YouTube
       antes de que alguien haga clic desde el sitio (hoy son solo texto, no están linkeados).
+
+## 7. Backlog de performance/accesibilidad (auditoría Lighthouse 2026-07-27)
+
+Auditoría real (Lighthouse 13.4.1, mobile) contra la Home en producción: Performance 86,
+Accessibility 94, Best Practices 100, SEO 100. Retomar en la próxima sesión de desarrollo:
+
+- [ ] **[Alto impacto] Fuentes de Google Fonts bloquean el render (~1.3s de FCP/LCP).**
+      `src/_includes/base.njk` carga `fonts.googleapis.com/css2?...` que encadena a 3 archivos
+      `.woff2` en `fonts.gstatic.com` (cadena crítica de 3 niveles, ~1,211ms). Esto es lo único
+      que explica que FCP = LCP = Speed Index = TTI estén los cuatro clavados en 3.3s.
+      Fix propuesto: auto-hospedar Inter/Space Grotesk/Bebas Neue como `.woff2` locales con
+      `@font-face { font-display: swap }` en `styles.css`, y quitar el `<link>` +
+      `preconnect` a Google Fonts de `base.njk`.
+- [ ] **[Medio] Contraste insuficiente en `.hero .proof .t`** (`src/assets/css/styles.css`).
+      Texto de las cifras del hero ("+15 años", "VIVA", "Nequi") usa `--white-40` sobre navy,
+      contraste 3.4–3.52:1 (se necesita 4.5:1). Fix: subir a `--white-70` o similar.
+- [ ] **[Medio] Salto de nivel de encabezado h2 → h4** en
+      `src/_includes/partials/footer.njk`. Los `<h4>Academy</h4>` / `Consulting` / `Empresa`
+      deberían ser `<h3>`.
+- [ ] Re-auditar Cursos/Consultoría/Nosotros/Contacto (esta corrida solo cubrió Home), y
+      volver a correr Lighthouse después de aplicar los fixes de arriba — deberían llevar el
+      score de Performance de 86 a mediados/altos 90s.
