@@ -1,0 +1,80 @@
+---
+layout: base.njk
+title: "Contacto"
+description: "Hablemos de tu operación. Agenda una consultoría o escríbenos a hola@praxevo.com. Respondemos en menos de 48 horas hábiles."
+permalink: /contacto/
+---
+<section class="page-hero">
+  <div class="wrap">
+    <p class="kicker">Contacto</p>
+    <h1>Hablemos de tu operación.</h1>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap" style="display:grid; grid-template-columns:1.3fr 1fr; gap:clamp(32px,6vw,64px);">
+    <div>
+      <div id="form-status" class="form-status" aria-live="polite"></div>
+
+      <form id="contact-form" novalidate>
+        <div class="honeypot-field" aria-hidden="true">
+          <label for="website">No llenar este campo</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="form-row" style="margin-bottom:20px;">
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="empresa">Empresa</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" autocomplete="organization">
+          </div>
+        </div>
+
+        <div class="field" style="margin-bottom:20px;">
+          <label for="correo">Correo</label>
+          <input type="email" id="correo" name="correo" placeholder="tu@empresa.com" required autocomplete="email">
+        </div>
+
+        <div class="field" style="margin-bottom:20px;">
+          <label for="interes">Me interesa</label>
+          <select id="interes" name="interes">
+            <option value="Un curso de la Academy">Un curso de la Academy</option>
+            <option value="Consultoría para mi empresa">Consultoría para mi empresa</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="field" style="margin-bottom:24px;">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos sobre tu operación o lo que buscas..." required></textarea>
+        </div>
+
+        <div class="cf-turnstile" data-sitekey="{{ turnstileSiteKey }}" style="margin-bottom:20px;"></div>
+
+        <button type="submit" class="btn btn-dark">Enviar mensaje</button>
+      </form>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:26px;">
+      <div>
+        <p class="eyebrow" style="margin-bottom:10px;">Correo</p>
+        <p style="font-size:15.5px; color:var(--navy); font-weight:600;">hola@praxevo.com</p>
+      </div>
+      <div>
+        <p class="eyebrow" style="margin-bottom:10px;">Ubicación</p>
+        <p style="font-size:14.5px; color:var(--carbon); line-height:1.6;">Bogotá, Colombia<br>Atención remota en toda LatAm</p>
+      </div>
+      <div>
+        <p class="eyebrow" style="margin-bottom:10px;">Redes</p>
+        <p style="font-size:14.5px; color:var(--carbon); line-height:1.8;">@praxevo en Instagram, TikTok y YouTube</p>
+      </div>
+      <div>
+        <p class="eyebrow" style="margin-bottom:10px;">Tiempo de respuesta</p>
+        <p style="font-size:14.5px; color:var(--carbon); line-height:1.6;">Menos de 48 horas hábiles</p>
+      </div>
+    </div>
+  </div>
+</section>

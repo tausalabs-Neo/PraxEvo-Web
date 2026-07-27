@@ -1,0 +1,95 @@
+---
+layout: base.njk
+title: "Sobre nosotros"
+description: "PraxEvo nace de la práctica real: más de 15 años operando CX y procesos en aviación (VIVA) y fintech (Nequi), ahora al alcance de las pymes de LatAm."
+permalink: /nosotros/
+---
+<section class="page-hero">
+  <div class="wrap">
+    <p class="kicker">Sobre nosotros</p>
+    <h1>La práctica primero. Siempre.</h1>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Nuestra historia</p>
+      <h2 style="font-size:clamp(24px,3vw,30px);">De la operación real a la práctica que la enseña</h2>
+    </div>
+    <p style="font-size:15.5px; line-height:1.75; color:var(--carbon); max-width:720px; margin-bottom:16px;">PraxEvo nació de una frustración simple: la mayoría de la consultoría que se ofrece a las pymes latinoamericanas es teórica, importada de contextos que no aplican, o demasiado cara para ser accesible.</p>
+    <p style="font-size:15.5px; line-height:1.75; color:var(--carbon); max-width:720px;">Después de más de 15 años operando experiencia de cliente y procesos en aviación (VIVA) y fintech (Nequi), decidimos empaquetar ese conocimiento en cursos y consultoría prácticos — al alcance de negocios reales.</p>
+  </div>
+</section>
+
+<section class="block bg-light">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Fundadores</p>
+      <h2 style="font-size:clamp(24px,3vw,30px);">Quiénes están detrás de PraxEvo</h2>
+    </div>
+    <p class="pending-note"><strong>Fotos pendientes.</strong> Los espacios de foto están listos para recibir las imágenes reales de cada fundador — hoy muestran un marcador temporal con iniciales.</p>
+    <div class="grid grid-2">
+      {% for f in [
+        { initials: "JSS", name: "John Steven Santana", role: "Cofundador" },
+        { initials: "VR", name: "Viviana Ricardo", role: "Cofundadora" }
+      ] %}
+      <div style="display:flex; gap:24px; align-items:center;">
+        <div class="founder-photo" style="width:120px; flex-shrink:0;">
+          <span class="initials" style="font-size:30px;">{{ f.initials }}</span>
+        </div>
+        <div>
+          <p style="font-family:var(--font-display); font-weight:700; font-size:19px; color:var(--navy); margin-bottom:4px;">{{ f.name }}</p>
+          <p style="font-size:13px; color:var(--green); font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">{{ f.role }}</p>
+          <p style="font-size:14px; color:var(--carbon); line-height:1.6;">Más de 15 años operando CX y procesos en aviación (VIVA) y fintech (Nequi).</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="grid grid-2">
+      <div>
+        <p style="font-family:var(--font-display); font-weight:700; font-size:20px; color:var(--navy); margin-bottom:12px;">Misión</p>
+        <p style="font-size:14.5px; line-height:1.7; color:var(--carbon);">Que las pymes latinoamericanas operen con la misma disciplina que las grandes compañías — sin necesitar su presupuesto.</p>
+      </div>
+      <div>
+        <p style="font-family:var(--font-display); font-weight:700; font-size:20px; color:var(--navy); margin-bottom:12px;">Visión</p>
+        <p style="font-size:14.5px; line-height:1.7; color:var(--carbon);">Ser la referencia en CX y operaciones para pymes de habla hispana, dentro y fuera de LatAm.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block bg-light">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 style="font-size:clamp(24px,3vw,30px);">Lo que nos guía</h2>
+    </div>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
+      {% for v in [
+        { title: "Consultor senior", desc: "Hablamos con autoridad porque ya ejecutamos lo que enseñamos." },
+        { title: "Directo y sin rodeos", desc: "Sin motivación vacía. Vamos al punto siempre." },
+        { title: "Tuteo profesional", desc: "Cercanos pero sin informalidad excesiva." },
+        { title: "Casos reales siempre", desc: "Cada concepto conecta con aviación o fintech." }
+      ] %}
+      <div style="background:var(--white); border-top:3px solid var(--green); padding:20px 24px 24px;">
+        <p style="font-family:var(--font-display); font-weight:700; font-size:16px; color:var(--navy); margin-bottom:8px;">{{ v.title }}</p>
+        <p style="font-size:13.5px; line-height:1.6; color:var(--carbon);">{{ v.desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="wrap">
+    <h2>¿Hablamos de tu operación?</h2>
+    <div class="cta-row">
+      <a href="/contacto/" class="btn btn-primary">Agenda una consultoría</a>
+    </div>
+  </div>
+</section>

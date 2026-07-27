@@ -1,0 +1,82 @@
+---
+layout: base.njk
+title: "Consultoría — PraxEvo Consulting"
+description: "Consultoría en CX y Operaciones para pymes que quieren escalar sin perder calidad. Diagnóstico, diseño e implementación con acompañamiento directo."
+permalink: /consultoria/
+---
+<section class="page-hero orange-kicker">
+  <div class="wrap">
+    <p class="kicker">PraxEvo Consulting</p>
+    <h1>Consultoría en CX y Operaciones para pymes que quieren escalar sin perder calidad.</h1>
+    <p>Diagnóstico, diseño e implementación — entregables concretos, no presentaciones. Cotización por proyecto, sin retainer obligatorio.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 style="font-size:clamp(24px,3vw,30px);">Cómo trabajamos</h2>
+    </div>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
+      {% for p in [
+        { num: "01", title: "Diagnóstico", desc: "Entendemos tu operación actual: procesos, equipo, herramientas y puntos de dolor." },
+        { num: "02", title: "Diseño", desc: "Diseñamos el proceso objetivo y el plan de implementación, priorizado por impacto." },
+        { num: "03", title: "Implementación", desc: "Ponemos en marcha los cambios junto a tu equipo, con acompañamiento directo." },
+        { num: "04", title: "Medición", desc: "Medimos resultados frente a la línea base y ajustamos lo que haga falta." }
+      ] %}
+      <div>
+        <p style="font-family:var(--font-impact); font-size:38px; color:var(--green); margin-bottom:10px;">{{ p.num }}</p>
+        <p style="font-family:var(--font-display); font-weight:700; font-size:16px; color:var(--navy); margin-bottom:8px;">{{ p.title }}</p>
+        <p style="font-size:13.5px; color:var(--carbon);">{{ p.desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="block bg-light">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 style="font-size:clamp(24px,3vw,30px);">Paquetes de trabajo</h2>
+    </div>
+    <p class="pending-note"><strong>Contenido de ejemplo — pendiente de reemplazo.</strong> Nombres, alcance y precios de los paquetes son ilustrativos; se cotiza por proyecto y deben confirmarse antes de publicar.</p>
+    <div class="grid grid-3">
+      {% for pkg in [
+        { name: "Diagnóstico Express", duration: "2 semanas", items: ["Mapeo de procesos actuales", "Identificación de puntos críticos", "Informe ejecutivo con recomendaciones"] },
+        { name: "Rediseño Integral", duration: "6–8 semanas", items: ["Diagnóstico completo", "Rediseño de procesos CX y operativos", "Plan de implementación detallado"] },
+        { name: "Acompañamiento Continuo", duration: "3–6 meses", items: ["Rediseño integral incluido", "Implementación acompañada", "Revisiones periódicas de resultados"] }
+      ] %}
+      <div style="background:var(--white); border:1px solid var(--border); padding:32px; display:flex; flex-direction:column; gap:16px;">
+        <div>
+          <p style="font-family:var(--font-display); font-weight:700; font-size:19px; color:var(--navy); margin-bottom:6px;">{{ pkg.name }}</p>
+          <p style="font-size:12.5px; color:var(--muted);">{{ pkg.duration }}</p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px; flex:1;">
+          {% for it in pkg.items %}
+          <p style="font-size:13.5px; line-height:1.5; color:var(--carbon); padding-left:16px; position:relative;">
+            <span style="position:absolute; left:0; color:var(--green);">–</span>{{ it }}
+          </p>
+          {% endfor %}
+        </div>
+        <span class="pending-badge" style="align-self:flex-start;">Cotización por proyecto</span>
+        <a href="/contacto/" class="btn btn-ghost-dark" style="margin-top:8px;">Agenda una llamada</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="block bg-navy" style="position:relative; overflow:hidden;">
+  <div class="wrap">
+    <p class="eyebrow">Nuestra credencial</p>
+    <p style="font-family:var(--font-display); font-weight:700; font-size:clamp(20px,3vw,26px); color:var(--green); max-width:680px; line-height:1.4; margin:14px 0 12px;">"Esto lo aplicamos en VIVA y en Nequi. Aquí está cómo lo adaptas a tu negocio."</p>
+    <p style="font-size:13.5px; color:var(--white-40);">Más de 15 años de experiencia operativa en aviación y fintech, ahora al alcance de tu pyme.</p>
+  </div>
+</section>
+
+<section class="block text-center">
+  <div class="wrap">
+    <h2 style="font-size:clamp(22px,3vw,28px); margin-bottom:20px;">Agenda un diagnóstico gratuito de 30 minutos</h2>
+    <a href="/contacto/" class="btn btn-dark">Agenda tu llamada</a>
+  </div>
+</section>

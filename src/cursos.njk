@@ -1,0 +1,63 @@
+---
+layout: base.njk
+title: "Cursos — PraxEvo Academy"
+description: "Cursos online de CX y Operaciones en Hotmart. Metodología práctica probada en aviación y fintech, aplicable desde el lunes."
+permalink: /cursos/
+---
+{% set courses = [
+  { id: 1, title: "CX que Convierte", category: "CX", desc: "Diseña experiencias de cliente que generan recompra, con el método aplicado en aviación de alto tráfico." },
+  { id: 2, title: "Operaciones sin Fricción", category: "Operaciones", desc: "Mapea y simplifica los procesos que más le cuestan tiempo y dinero a tu pyme." },
+  { id: 3, title: "Liderazgo de Equipos de Servicio", category: "Liderazgo", desc: "Forma líderes de primera línea capaces de sostener altos estándares de servicio bajo presión." },
+  { id: 4, title: "Mapeo de Journey del Cliente", category: "CX", desc: "La herramienta base para entender dónde se pierde a un cliente — y cómo evitarlo." },
+  { id: 5, title: "Procesos a Prueba de Errores", category: "Operaciones", desc: "Diseña procesos que no dependen de la memoria de una sola persona para funcionar bien." },
+  { id: 6, title: "De Reactivo a Estratégico", category: "Liderazgo", desc: "Pasa de apagar incendios a construir un área de experiencia con visión de negocio." }
+] %}
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="kicker">PraxEvo Academy</p>
+    <h1>Cursos online de CX y Operaciones</h1>
+    <p>Metodología práctica, casos reales de aviación y fintech, disponible en Hotmart. Precio de referencia de lanzamiento: <strong style="color:var(--white);">USD $97</strong>.</p>
+  </div>
+</section>
+
+<section class="block" style="padding-bottom:0;">
+  <div class="wrap">
+    <p class="pending-note"><strong>Contenido de ejemplo — pendiente de reemplazo.</strong> Títulos, descripciones, precios y enlaces de Hotmart son ilustrativos y deben sustituirse por el catálogo real antes de publicar el sitio.</p>
+
+    <div class="chip-row" data-filter-chips role="group" aria-label="Filtrar cursos por categoría">
+      <button type="button" class="chip" aria-pressed="true" data-category="Todos">Todos</button>
+      <button type="button" class="chip" aria-pressed="false" data-category="CX">CX</button>
+      <button type="button" class="chip" aria-pressed="false" data-category="Operaciones">Operaciones</button>
+      <button type="button" class="chip" aria-pressed="false" data-category="Liderazgo">Liderazgo</button>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="grid grid-3">
+      {% for c in courses %}
+      <div class="card" data-course-card data-category="{{ c.category }}">
+        <div class="card-thumb">Miniatura del curso</div>
+        <div class="card-body">
+          <span class="card-tag">{{ c.category }}</span>
+          <h3>{{ c.title }}</h3>
+          <p>{{ c.desc }}</p>
+          <div class="card-foot">
+            <span class="pending-badge">Precio pendiente</span>
+            <span class="cta-link">Ver en Hotmart →</span>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="block bg-light text-center">
+  <div class="wrap">
+    <h2 style="font-size:clamp(22px,3vw,28px); margin-bottom:20px;">¿No sabes por dónde empezar?</h2>
+    <a href="/contacto/" class="btn btn-dark">Agenda un diagnóstico gratuito</a>
+  </div>
+</section>

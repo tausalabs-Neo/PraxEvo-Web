@@ -1,0 +1,117 @@
+---
+layout: base.njk
+title: "Práctica que evoluciona tu negocio"
+description: "PraxEvo transforma cómo operan y atienden las pymes de LatAm. Método probado en aviación (VIVA) y fintech (Nequi), aplicable desde el lunes. Cursos (Academy) y consultoría (Consulting) en CX y operaciones."
+organizationSchema: true
+permalink: /
+---
+<section class="hero">
+  <div class="hero-glow glow-1" aria-hidden="true"></div>
+  <div class="hero-glow glow-2" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="kicker">Cursos online · Consultoría en CX y Operaciones</p>
+    <h1>No cursos. <span class="accent">Método.</span> Práctica que evoluciona tu negocio.</h1>
+    <p class="lead">Metodología probada en aviación (VIVA) y fintech (Nequi), adaptada a la realidad operativa de tu pyme. Del método a los resultados.</p>
+    <div class="cta-row">
+      <a href="/cursos/" class="btn btn-primary">Ver cursos</a>
+      <a href="/contacto/" class="btn btn-ghost-light">Agenda una consultoría</a>
+    </div>
+    <div class="proof">
+      <div>
+        <p class="n">+15 años</p>
+        <p class="t">de experiencia operativa real en CX y procesos</p>
+      </div>
+      <div>
+        <p class="n">VIVA</p>
+        <p class="t">Metodología aplicada en aviación</p>
+      </div>
+      <div>
+        <p class="n">Nequi</p>
+        <p class="t">Metodología aplicada en fintech</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:16px; max-width:none;">
+      <div>
+        <p class="eyebrow">PraxEvo Academy</p>
+        <h2>Cursos destacados</h2>
+      </div>
+      <a href="/cursos/" style="font-weight:600; font-size:14.5px; color:var(--navy); white-space:nowrap;">Ver todos los cursos →</a>
+    </div>
+
+    <p class="pending-note"><strong>Contenido de ejemplo — pendiente de reemplazo.</strong> Los cursos, precios y enlaces de Hotmart que se muestran abajo son ilustrativos. Se reemplazarán por el catálogo real antes de publicar.</p>
+
+    <div class="grid grid-3">
+      {% for c in [
+        { title: "CX que Convierte", category: "CX", desc: "Diseña experiencias de cliente que generan recompra, con el método aplicado en aviación de alto tráfico." },
+        { title: "Operaciones sin Fricción", category: "Operaciones", desc: "Mapea y simplifica los procesos que más le cuestan tiempo y dinero a tu pyme." },
+        { title: "Liderazgo de Equipos de Servicio", category: "Liderazgo", desc: "Forma líderes de primera línea capaces de sostener altos estándares de servicio bajo presión." }
+      ] %}
+      <div class="card" data-course-card>
+        <div class="card-thumb">Miniatura del curso</div>
+        <div class="card-body">
+          <span class="card-tag">{{ c.category }}</span>
+          <h3>{{ c.title }}</h3>
+          <p>{{ c.desc }}</p>
+          <div class="card-foot">
+            <span class="pending-badge">Precio pendiente</span>
+            <span class="cta-link">Ver en Hotmart →</span>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="block bg-light">
+  <div class="wrap">
+    <div class="sec-head" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:16px; max-width:none;">
+      <div>
+        <p class="eyebrow orange">PraxEvo Consulting</p>
+        <h2>Consultoría para pymes que quieren operar mejor</h2>
+      </div>
+      <a href="/consultoria/" style="font-weight:600; font-size:14.5px; color:var(--navy); white-space:nowrap;">Conoce el proceso completo →</a>
+    </div>
+    <div class="divider-grid grid-3">
+      {% for s in [
+        { title: "Diagnóstico Operativo", desc: "Mapeamos procesos, tiempos y puntos de fricción en tu operación actual." },
+        { title: "Rediseño de Procesos CX", desc: "Rediseñamos flujos de atención y operación con foco en experiencia y eficiencia." },
+        { title: "Implementación Acompañada", desc: "Te acompañamos en la puesta en marcha, con seguimiento y ajuste continuo." }
+      ] %}
+      <div style="background:var(--white); padding:32px;">
+        <p style="font-family:var(--font-display); font-weight:700; font-size:18px; color:var(--navy); margin-bottom:10px;">{{ s.title }}</p>
+        <p style="font-size:14px; color:var(--carbon);">{{ s.desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap" style="display:grid; grid-template-columns:minmax(200px,240px) 1fr; gap:clamp(28px,5vw,56px); align-items:center;">
+    <div class="founder-photo">
+      <span class="initials">JS·VR</span>
+    </div>
+    <div>
+      <p class="eyebrow">Sobre los fundadores</p>
+      <h2 style="font-size:clamp(24px,3vw,30px); margin:16px 0 14px;">John Steven Santana &amp; Viviana Ricardo</h2>
+      <p style="font-size:15.5px; color:var(--carbon); max-width:600px; margin-bottom:18px;">Más de 15 años operando experiencia de cliente y procesos en aviación (VIVA) y fintech (Nequi) antes de fundar PraxEvo. Lo que enseñan no viene de teoría — viene de haberlo ejecutado en entornos de alta presión.</p>
+      <a href="/nosotros/" style="font-weight:600; font-size:14.5px; color:var(--navy);">Conoce al equipo →</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="wrap">
+    <h2>¿Listo para evolucionar tu operación?</h2>
+    <div class="cta-row">
+      <a href="/cursos/" class="btn btn-primary">Ver cursos</a>
+      <a href="/contacto/" class="btn btn-ghost-light">Agenda una consultoría</a>
+    </div>
+  </div>
+</section>

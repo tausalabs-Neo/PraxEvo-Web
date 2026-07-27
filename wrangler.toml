@@ -1,0 +1,17 @@
+name = "praxevo-site"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = "_site"
+
+# Rate-limiting store used by functions/api/contact.js.
+# Create with: npx wrangler kv namespace create CONTACT_RL
+# then paste the returned id below (and add the same binding name
+# in the Cloudflare Pages dashboard → Settings → Functions → KV namespace bindings
+# for both Production and Preview).
+[[kv_namespaces]]
+binding = "CONTACT_RL"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"
+
+# Secrets (RESEND_API_KEY, TURNSTILE_SECRET_KEY) and plain env vars
+# (CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL, TURNSTILE_SITE_KEY) are NOT set here —
+# configure them in the Cloudflare Pages dashboard → Settings → Environment variables,
+# or with `npx wrangler pages secret put <NAME>`. Never commit real secrets to this file.

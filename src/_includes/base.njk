@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }} · PraxEvo</title>
+<meta name="description" content="{{ description }}">
+<link rel="canonical" href="https://somospraxevo.com{{ page.url }}">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PraxEvo">
+<meta property="og:title" content="{{ title }} · PraxEvo">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:url" content="https://somospraxevo.com{{ page.url }}">
+<meta property="og:image" content="https://somospraxevo.com/assets/img/praxevo-logo-primary.png">
+<meta property="og:locale" content="es_CO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ title }} · PraxEvo">
+<meta name="twitter:description" content="{{ description }}">
+
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link rel="alternate icon" href="/assets/img/logo-praxevo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/styles.css">
+
+{% if organizationSchema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "PraxEvo",
+  "alternateName": "Prax-Evo",
+  "url": "https://somospraxevo.com",
+  "logo": "https://somospraxevo.com/assets/img/logo-praxevo.png",
+  "description": "PraxEvo transforma cómo operan y atienden las pymes de LatAm, con metodología de CX y operaciones probada en aviación y fintech.",
+  "email": "hola@praxevo.com",
+  "areaServed": "LatAm",
+  "sameAs": [
+    "https://instagram.com/praxevo",
+    "https://tiktok.com/@praxevo",
+    "https://youtube.com/@praxevo"
+  ]
+}
+</script>
+{% endif %}
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+{% include "partials/nav.njk" %}
+
+<main id="main">
+  {{ content | safe }}
+</main>
+
+{% include "partials/footer.njk" %}
+
+<script src="/assets/js/main.js" defer></script>
+{% if page.url == "/contacto/" %}
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+{% endif %}
+</body>
+</html>
