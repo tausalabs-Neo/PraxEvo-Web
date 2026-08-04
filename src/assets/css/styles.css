@@ -152,7 +152,7 @@ section.block { padding: clamp(56px, 8vw, 96px) 0; }
 .site-header .logo:hover { opacity: 0.85; }
 
 .primary-nav { display: flex; align-items: center; gap: clamp(18px, 3vw, 34px); }
-.primary-nav a {
+.primary-nav a:not(.btn) {
   font-size: 14.5px; font-weight: 500; color: var(--carbon);
   padding: 10px 2px; position: relative;
 }
@@ -160,7 +160,7 @@ section.block { padding: clamp(56px, 8vw, 96px) 0; }
 .primary-nav a[aria-current="page"]::after {
   content: ""; position: absolute; left: 0; right: 0; bottom: 2px; height: 2px; background: var(--green);
 }
-.primary-nav a:hover { color: var(--green); }
+.primary-nav a:not(.btn):hover { color: var(--green); }
 
 .nav-cta { white-space: nowrap; }
 
@@ -180,7 +180,7 @@ section.block { padding: clamp(56px, 8vw, 96px) 0; }
   overflow-y: auto;
 }
 .mobile-menu[hidden] { display: none; }
-.mobile-menu a { padding: 16px 0; border-bottom: 1px solid var(--border); font-size: 18px; font-weight: 500; color: var(--navy); }
+.mobile-menu a:not(.btn) { padding: 16px 0; border-bottom: 1px solid var(--border); font-size: 18px; font-weight: 500; color: var(--navy); }
 .mobile-menu a[aria-current="page"] { color: var(--green); font-weight: 700; }
 .mobile-menu .btn { margin-top: 18px; width: 100%; }
 

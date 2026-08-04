@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: "Sobre nosotros"
-description: "PraxEvo nace de la práctica real: más de 15 años operando CX y procesos en aviación (VIVA) y fintech (Nequi), ahora al alcance de las pymes de LatAm."
+description: "PraxEvo nace de la práctica real: más de 15 años operando CX y procesos en aviación de bajo costo y fintech de alto volumen, ahora al alcance de las pymes de LatAm."
 permalink: /nosotros/
 ---
 <section class="page-hero">
@@ -18,7 +18,7 @@ permalink: /nosotros/
       <h2 style="font-size:clamp(24px,3vw,30px);">De la operación real a la práctica que la enseña</h2>
     </div>
     <p style="font-size:15.5px; line-height:1.75; color:var(--carbon); max-width:720px; margin-bottom:16px;">PraxEvo nació de una frustración simple: la mayoría de la consultoría que se ofrece a las pymes latinoamericanas es teórica, importada de contextos que no aplican, o demasiado cara para ser accesible.</p>
-    <p style="font-size:15.5px; line-height:1.75; color:var(--carbon); max-width:720px;">Después de más de 15 años operando experiencia de cliente y procesos en aviación (VIVA) y fintech (Nequi), decidimos empaquetar ese conocimiento en cursos y consultoría prácticos — al alcance de negocios reales.</p>
+    <p style="font-size:15.5px; line-height:1.75; color:var(--carbon); max-width:720px;">Después de años operando experiencia de cliente y procesos en sectores como aviación de bajo costo y fintech de alto volumen, decidimos empaquetar ese conocimiento en cursos y consultoría prácticos — al alcance de negocios reales.</p>
   </div>
 </section>
 
@@ -28,20 +28,30 @@ permalink: /nosotros/
       <p class="eyebrow">Fundadores</p>
       <h2 style="font-size:clamp(24px,3vw,30px);">Quiénes están detrás de PraxEvo</h2>
     </div>
-    <p class="pending-note"><strong>Fotos pendientes.</strong> Los espacios de foto están listos para recibir las imágenes reales de cada fundador — hoy muestran un marcador temporal con iniciales.</p>
     <div class="grid grid-2">
       {% for f in [
-        { initials: "JSS", name: "John Steven Santana", role: "Cofundador" },
-        { initials: "VR", name: "Viviana Ricardo", role: "Cofundadora" }
+        { initials: "JSS", name: "John Steven Santana", role: "Cofundador", photo: "/assets/img/steven-santana.jpg", photoWidth: 352, photoHeight: 480, linkedin: "https://www.linkedin.com/in/j-stevensantana", bio: "Más de 15 años transformando experiencia de cliente y operaciones con tecnología e IA, en fintech de alto volumen y aerolíneas de bajo costo. Construye el método de PraxEvo con el mismo rigor que exige operar a escala, adaptado al tamaño real de una pyme." },
+        { initials: "VR",  name: "Viviana Ricardo",     role: "Cofundadora", photo: "/assets/img/viviana-ricardo.jpg", photoWidth: 291, photoHeight: 480, linkedin: "https://www.linkedin.com/in/viviana-ricardo-londoño-a5440713a/", bio: "Lidera operaciones, procesos y experiencia de cliente, con trayectoria en administración, liderazgo de equipos y publicidad. Trae a PraxEvo la disciplina de quien ha ordenado la operación desde adentro, no solo desde la teoría." }
       ] %}
       <div style="display:flex; gap:24px; align-items:center;">
         <div class="founder-photo" style="width:120px; flex-shrink:0;">
+          {% if f.photo %}
+          <img src="{{ f.photo }}" width="{{ f.photoWidth }}" height="{{ f.photoHeight }}" alt="Retrato de {{ f.name }}, {{ f.role | lower }} de PraxEvo" style="width:100%; height:100%; object-fit:cover; display:block;">
+          {% else %}
           <span class="initials" style="font-size:30px;">{{ f.initials }}</span>
+          {% endif %}
         </div>
         <div>
           <p style="font-family:var(--font-display); font-weight:700; font-size:19px; color:var(--navy); margin-bottom:4px;">{{ f.name }}</p>
           <p style="font-size:13px; color:var(--green); font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">{{ f.role }}</p>
-          <p style="font-size:14px; color:var(--carbon); line-height:1.6;">Más de 15 años operando CX y procesos en aviación (VIVA) y fintech (Nequi).</p>
+          <p style="font-size:14px; color:var(--carbon); line-height:1.6;">{{ f.bio if f.bio else "Más de 15 años operando CX y procesos en aviación de bajo costo y fintech de alto volumen." }}</p>
+          {% if f.linkedin %}
+          <a href="{{ f.linkedin }}" target="_blank" rel="noopener noreferrer"
+             style="display:inline-flex; align-items:center; gap:6px; margin-top:10px; font-size:13.5px; font-weight:600; color:var(--navy);">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            LinkedIn
+          </a>
+          {% endif %}
         </div>
       </div>
       {% endfor %}

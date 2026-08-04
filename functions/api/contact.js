@@ -135,6 +135,9 @@ export async function onRequestPost({ request, env }) {
   if (!nombre || !correo || !mensaje) {
     return jsonResponse(400, { ok: false, error: "Nombre, correo y mensaje son obligatorios." });
   }
+  if (payload.consiento !== "on") {
+    return jsonResponse(400, { ok: false, error: "Debes autorizar el tratamiento de tus datos personales para continuar." });
+  }
   if (!EMAIL_RE.test(correo)) {
     return jsonResponse(400, { ok: false, error: "El correo no tiene un formato válido." });
   }

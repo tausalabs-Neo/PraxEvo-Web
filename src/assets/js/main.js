@@ -70,6 +70,12 @@
         return;
       }
 
+      const consiento = form.querySelector("#consiento");
+      if (!consiento || !consiento.checked) {
+        setStatus("error", "Debes autorizar el tratamiento de tus datos personales para continuar.");
+        return;
+      }
+
       submitBtn.disabled = true;
       submitBtn.textContent = "Enviando...";
 
