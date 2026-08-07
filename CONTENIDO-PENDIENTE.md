@@ -7,11 +7,28 @@ nota naranja ("Contenido de ejemplo — pendiente de reemplazo") o un badge "Pre
 "Fotos pendientes", para que nadie lo confunda con un dato real.
 
 ## 1. Catálogo de PraxEvo Academy (`src/cursos.njk`, sección de Home)
-- [ ] Títulos y descripciones reales de cada curso (hoy hay 6 de ejemplo).
-- [ ] Precio real de cada curso (se sabe que el precio ancla de lanzamiento es **USD $97**,
-      sin bajar de $79, según el manual de marca — pero no hay precios por curso individual).
-- [ ] Enlace real de Hotmart para cada curso (el botón "Ver en Hotmart →" no enlaza a nada aún).
-- [ ] Miniatura/imagen real de cada curso (hoy es un bloque gris con texto "Miniatura del curso").
+- [x] **Título y estructura reales — resuelto 2026-08-06 (TEC-0011, cita [[ENC-0001 — Catálogo y precio real de Academy|ENC-0001]]).**
+      Se bajaron los 6 cursos de ejemplo. Publicado el único curso real: "Del caos operativo al
+      cliente fidelizado", 8 módulos, 100% digital, pago único, a ritmo del alumno, sin
+      acompañamiento en vivo, sin certificación reconocida por universidad.
+- [x] **Precio real — resuelto 2026-08-06 (TEC-0011, cita ENC-0001, gate techo-duro firmado por
+      Steve 2026-08-03).** USD 97 y COP 299.000, con 12 cuotas de COP 24.917/mes habilitadas
+      (solo aplica al precio en pesos). Regla de revisión cambiaria escrita en comentario
+      Nunjucks junto al precio en `cursos.njk` e `index.njk`: revisar si la TRM del Banco de la
+      República supera 3.785 COP/USD.
+- [ ] **Descripción/copy del curso** — pendiente de Marca y Contenido. No se inventó copy;
+      la tarjeta muestra el badge honesto "Descripción pendiente — Marca y Contenido"
+      (`.pending-badge`).
+- [ ] Enlace real de Hotmart — el curso no está publicado ahí todavía (pendiente de Academy,
+      ver INS-0012). El CTA de la tarjeta enlaza a `/contacto/` ("Escríbenos para inscribirte →")
+      con un comentario `{# TODO: reemplazar por el enlace real de Hotmart cuando Academy
+      publique el curso #}` junto al enlace.
+- [ ] Miniatura/imagen real del curso — pendiente de Marca y Contenido (handoff HO-2 en
+      ENC-0001). Se dejó el placeholder gris "Miniatura del curso" que ya existía en el markup;
+      no se generó ninguna imagen.
+- [ ] El reproductor nativo de Hotmart (1,49 USD por venta) no se activa en el lanzamiento — es
+      configuración dentro de la cuenta de Hotmart de Academy, nada que tocar en código. La
+      cuenta de Hotmart de Academy tampoco existe todavía (INS-0012).
 
 ## 2. Paquetes de PraxEvo Consulting (`src/consultoria.njk`)
 - [ ] Nombres, alcance y duración definitivos de cada paquete.

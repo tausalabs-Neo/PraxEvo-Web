@@ -43,23 +43,23 @@ permalink: /
       <a href="/cursos/" style="font-weight:600; font-size:14.5px; color:var(--navy); white-space:nowrap;">Ver todos los cursos →</a>
     </div>
 
-    <p class="pending-note"><strong>Contenido de ejemplo — pendiente de reemplazo.</strong> Los cursos, precios y enlaces de Hotmart que se muestran abajo son ilustrativos. Se reemplazarán por el catálogo real antes de publicar.</p>
-
+    {# Regla de revisión cambiaria (ENC-0001, aprobada 2026-08-03): si la TRM del Banco de la República supera 3.785 COP/USD, este precio en pesos (COP 299.000) debe revisarse — a esa TRM equivale a USD 79, el piso del manual de marca. #}
     <div class="grid grid-3">
       {% for c in [
-        { title: "CX que Convierte", category: "CX", desc: "Diseña experiencias de cliente que generan recompra, con el método aplicado en aviación de alto tráfico." },
-        { title: "Operaciones sin Fricción", category: "Operaciones", desc: "Mapea y simplifica los procesos que más le cuestan tiempo y dinero a tu pyme." },
-        { title: "Liderazgo de Equipos de Servicio", category: "Liderazgo", desc: "Forma líderes de primera línea capaces de sostener altos estándares de servicio bajo presión." }
+        { title: "Del caos operativo al cliente fidelizado", priceUsd: "USD 97", priceCop: "COP 299.000", installments: "12 cuotas de COP 24.917/mes" }
       ] %}
       <div class="card" data-course-card>
         <div class="card-thumb">Miniatura del curso</div>
         <div class="card-body">
-          <span class="card-tag">{{ c.category }}</span>
           <h3>{{ c.title }}</h3>
-          <p>{{ c.desc }}</p>
-          <div class="card-foot">
-            <span class="pending-badge">Precio pendiente</span>
-            <span class="cta-link">Ver en Hotmart →</span>
+          <p><span class="pending-badge">Descripción pendiente — Marca y Contenido</span></p>
+          <div class="card-foot" style="flex-direction:column; align-items:flex-start; gap:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+              <span class="price">{{ c.priceUsd }} · {{ c.priceCop }}</span>
+              <a href="/contacto/" class="cta-link">Escríbenos para inscribirte →</a>
+              {# TODO: reemplazar por el enlace real de Hotmart cuando Academy publique el curso #}
+            </div>
+            <span style="font-size:12px; color:var(--muted);">{{ c.installments }}</span>
           </div>
         </div>
       </div>

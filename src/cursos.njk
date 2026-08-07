@@ -4,13 +4,9 @@ title: "Cursos — PraxEvo Academy"
 description: "Cursos online de CX y Operaciones en Hotmart. Metodología práctica probada en aviación y fintech, aplicable desde el lunes."
 permalink: /cursos/
 ---
+{# Regla de revisión cambiaria (ENC-0001, aprobada 2026-08-03): si la TRM del Banco de la República supera 3.785 COP/USD, este precio en pesos (COP 299.000) debe revisarse — a esa TRM equivale a USD 79, el piso del manual de marca. #}
 {% set courses = [
-  { id: 1, title: "CX que Convierte", category: "CX", desc: "Diseña experiencias de cliente que generan recompra, con el método aplicado en aviación de alto tráfico." },
-  { id: 2, title: "Operaciones sin Fricción", category: "Operaciones", desc: "Mapea y simplifica los procesos que más le cuestan tiempo y dinero a tu pyme." },
-  { id: 3, title: "Liderazgo de Equipos de Servicio", category: "Liderazgo", desc: "Forma líderes de primera línea capaces de sostener altos estándares de servicio bajo presión." },
-  { id: 4, title: "Mapeo de Journey del Cliente", category: "CX", desc: "La herramienta base para entender dónde se pierde a un cliente — y cómo evitarlo." },
-  { id: 5, title: "Procesos a Prueba de Errores", category: "Operaciones", desc: "Diseña procesos que no dependen de la memoria de una sola persona para funcionar bien." },
-  { id: 6, title: "De Reactivo a Estratégico", category: "Liderazgo", desc: "Pasa de apagar incendios a construir un área de experiencia con visión de negocio." }
+  { id: 1, title: "Del caos operativo al cliente fidelizado", priceUsd: "USD 97", priceCop: "COP 299.000", installments: "12 cuotas de COP 24.917/mes" }
 ] %}
 
 <section class="page-hero">
@@ -21,32 +17,22 @@ permalink: /cursos/
   </div>
 </section>
 
-<section class="block" style="padding-bottom:0;">
-  <div class="wrap">
-    <p class="pending-note"><strong>Contenido de ejemplo — pendiente de reemplazo.</strong> Títulos, descripciones, precios y enlaces de Hotmart son ilustrativos y deben sustituirse por el catálogo real antes de publicar el sitio.</p>
-
-    <div class="chip-row" data-filter-chips role="group" aria-label="Filtrar cursos por categoría">
-      <button type="button" class="chip" aria-pressed="true" data-category="Todos">Todos</button>
-      <button type="button" class="chip" aria-pressed="false" data-category="CX">CX</button>
-      <button type="button" class="chip" aria-pressed="false" data-category="Operaciones">Operaciones</button>
-      <button type="button" class="chip" aria-pressed="false" data-category="Liderazgo">Liderazgo</button>
-    </div>
-  </div>
-</section>
-
 <section class="block">
   <div class="wrap">
     <div class="grid grid-3">
       {% for c in courses %}
-      <div class="card" data-course-card data-category="{{ c.category }}">
+      <div class="card" data-course-card>
         <div class="card-thumb">Miniatura del curso</div>
         <div class="card-body">
-          <span class="card-tag">{{ c.category }}</span>
           <h3>{{ c.title }}</h3>
-          <p>{{ c.desc }}</p>
-          <div class="card-foot">
-            <span class="pending-badge">Precio pendiente</span>
-            <span class="cta-link">Ver en Hotmart →</span>
+          <p><span class="pending-badge">Descripción pendiente — Marca y Contenido</span></p>
+          <div class="card-foot" style="flex-direction:column; align-items:flex-start; gap:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+              <span class="price">{{ c.priceUsd }} · {{ c.priceCop }}</span>
+              <a href="/contacto/" class="cta-link">Escríbenos para inscribirte →</a>
+              {# TODO: reemplazar por el enlace real de Hotmart cuando Academy publique el curso #}
+            </div>
+            <span style="font-size:12px; color:var(--muted);">{{ c.installments }}</span>
           </div>
         </div>
       </div>
