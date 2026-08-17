@@ -18,5 +18,9 @@ CONTACT_FROM_EMAIL = "PraxEvo <no-reply@somospraxevo.com>"
 # Secrets (RESEND_API_KEY, TURNSTILE_SECRET_KEY) are NOT set here — configure them
 # in the Cloudflare Pages dashboard → Settings → Variables and secrets, or with
 # `npx wrangler pages secret put <NAME>`. Never commit real secrets to this file.
-# TURNSTILE_SITE_KEY is a build-time value read by .eleventy.js, not a runtime var —
-# export it as an env var before `npm run build`.
+#
+# TURNSTILE_SITE_KEY no va aquí y ya no hay que exportarla (corregido 2026-08-17).
+# Vive versionada en src/_data/turnstile.json y es el valor por defecto del build.
+# Ponerla en [vars] NO funcionaría: [vars] es un binding de runtime para Functions, no una
+# variable de build, y Eleventy la lee en build time. Lo mismo pasa con un secreto del
+# dashboard, que también es runtime-only. Ver README, sección 4.

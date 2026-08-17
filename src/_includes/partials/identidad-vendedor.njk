@@ -1,0 +1,17 @@
+{#
+  Identidad del vendedor — art. 50 lit. a de la Ley 1480 de 2011 (comercio electrónico).
+  Pedido por Legal y Riesgo en el handoff HO-7 (ENC-0001, 2026-08-16): "agregar la identidad
+  real del vendedor (nombre e identificación del titular, no solo la marca)".
+
+  La línea de identificación SOLO se imprime si el dato existe en src/_data/legal.json.
+  Mientras sea null no se imprime nada en su lugar: ni un guion, ni "pendiente", ni un
+  número de relleno. Ver INS-0023.
+#}
+<div style="border:1px solid var(--border); border-radius:var(--radius); padding:24px; background:var(--bg-light);">
+  <h2 style="font-size:18px; margin-bottom:12px;">Identidad del vendedor</h2>
+  <p style="margin-bottom:8px;">PraxEvo es la marca comercial bajo la que opera <strong>{{ legal.nombreTitular }}</strong>, persona natural, titular de la cuenta desde la que se comercializan los cursos de PraxEvo Academy en la plataforma Hotmart.</p>
+  {% if legal.identificacionTitular %}
+  <p style="margin-bottom:8px;">Identificación: <strong>{{ legal.identificacionTitular }}</strong>.</p>
+  {% endif %}
+  <p style="margin-bottom:0;">Canal de atención de peticiones, quejas y reclamos: <strong><a href="mailto:{{ legal.correoAtencion }}">{{ legal.correoAtencion }}</a></strong>.</p>
+</div>

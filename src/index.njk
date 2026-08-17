@@ -49,10 +49,14 @@ permalink: /
         { title: "Del caos operativo al cliente fidelizado", priceUsd: "USD 97", priceCop: "COP 299.000", installments: "12 cuotas de COP 24.917/mes" }
       ] %}
       <div class="card" data-course-card>
-        <div class="card-thumb">Miniatura del curso</div>
+        {# Miniatura real entregada por Marca y Contenido el 2026-08-16 (ENC-0001, handoff HO-2). #}
+        <div class="card-thumb" style="padding:0;">
+          <img src="/assets/img/courses/curso-caos-operativo.png" alt="Curso Del caos operativo al cliente fidelizado — PraxEvo Academy" width="1200" height="675" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">
+        </div>
         <div class="card-body">
           <h3>{{ c.title }}</h3>
-          <p><span class="pending-badge">Descripción pendiente — Marca y Contenido</span></p>
+          {# Copy real entregado por Marca y Contenido el 2026-08-16, versión corta para la home. Sin cifras de resultado de cliente (ver la advertencia de P5 en ENC-0001). #}
+          <p>Tu operación se rompe en los mismos puntos cada semana y nadie mide dónde. En 8 módulos tomas un proceso concreto y lo dejas medido, escrito en cuatro pasos y con un tablero que lo sostiene — con el método aplicado en una aerolínea de bajo costo y en una fintech de alto volumen.</p>
           <div class="card-foot" style="flex-direction:column; align-items:flex-start; gap:8px;">
             <div style="display:flex; justify-content:space-between; align-items:center; width:100%;">
               <span class="price">{{ c.priceUsd }} · {{ c.priceCop }}</span>

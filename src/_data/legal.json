@@ -1,0 +1,15 @@
+{
+  "_origen": "ENC-0001, handoff HO-7 de Legal y Riesgo → Tecnología y Datos (2026-08-16). Los textos son de Legal y Riesgo; esta área los despliega y NO los reescribe. Ver P2 — Handoff.",
+
+  "nombreTitular": "John Steven Santana Tausa",
+  "_nombreTitular_fuente": "Pantalla 'Información personal' de account.hotmart.com, campo 'Nombre completo', leída por Academy el 2026-08-16 y transcrita en ENC-0001 ('Registro de ejecución — 2026-08-16 (segunda), Academy', punto 2). No es un dato deducido.",
+
+  "identificacionTitular": null,
+  "_identificacionTitular_estado": "PENDIENTE — INS-0023. El art. 50 lit. a de la Ley 1480 de 2011 exige identificación del proveedor, no solo el nombre. Ese número NO existe en ninguna nota de la vault (grep sobre PraxEvo_Corp el 2026-08-16: cero resultados) y publicarlo es una decisión de Steve sobre su propio dato personal, no una consulta. Mientras sea null, la plantilla NO imprime la línea: no se inventa ni se rellena con un texto de relleno.",
+
+  "correoAtencion": "hola@somospraxevo.com",
+  "_correoAtencion_estado": "PROPUESTO por Tecnología y Datos, pendiente de confirmación de Cliente (handoff HO-17). Legal dejó el campo en blanco a propósito y dijo que se define 'con Cliente y Tecnología'. No es una dirección inventada: la casilla existe (MX de Cloudflare Email Routing vivo sobre la raíz, medido el 2026-08-16 por DNS-over-HTTPS) y el sitio YA la publica en /terminos/ sección 9. Lo que falta no es la dirección, es que Cliente confirme que ese buzón queda atendido dentro de los plazos de la Ley 1581 (consulta 10 días hábiles, reclamo 15).",
+
+  "plazoGarantiaDias": 15,
+  "_plazoGarantiaDias_fuente": "Legal y Riesgo, ENC-0001, punto 7 del registro del 2026-08-16. Ejecutado por Academy en Hotmart el mismo día (producto 8323464, campo 'Plazo para solicitar el reembolso' = 15 días, verificado tras recarga completa). El número de esta página y el de la plataforma deben coincidir siempre: si Academy lo cambia en Hotmart, este archivo cambia el mismo día."
+}

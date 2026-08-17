@@ -63,14 +63,35 @@ Production y Preview) apuntando a ese namespace.
 |---|---|---|
 | `RESEND_API_KEY` | Secreto | API key de resend.com (verifica el dominio somospraxevo.com allí primero) |
 | `TURNSTILE_SECRET_KEY` | Secreto | Secret key del widget de Turnstile |
-| `TURNSTILE_SITE_KEY` | Variable de build | Site key del widget de Turnstile (se usa en el HTML) |
-| `CONTACT_TO_EMAIL` | Variable | `hola@somospraxevo.com` |
-| `CONTACT_FROM_EMAIL` | Variable | `PraxEvo <no-reply@somospraxevo.com>` (dominio verificado en Resend) |
+| `CONTACT_TO_EMAIL` | Variable, en `wrangler.toml` `[vars]` | `hola@somospraxevo.com` |
+| `CONTACT_FROM_EMAIL` | Variable, en `wrangler.toml` `[vars]` | `PraxEvo <no-reply@somospraxevo.com>` (dominio verificado en Resend) |
 
-`TURNSTILE_SITE_KEY` debe estar disponible en **build time** (Eleventy la lee en
-`.eleventy.js`), no solo en runtime de la Function — configúrala también como variable de build
-del proyecto de Pages, o el sitio se construirá con la site key de pruebas de Cloudflare (que
-siempre aprueba, y no bloquea nada realmente).
+**Ojo con el dashboard.** Como este proyecto tiene `wrangler.toml`, ese archivo es la fuente de
+verdad y el dashboard ya no deja editar variables de texto: solo admite secretos. Los dos correos
+de arriba se cambian en `wrangler.toml`, no en la pantalla.
+
+#### `TURNSTILE_SITE_KEY` ya no es una variable — corregido el 2026-08-17
+
+La site key vive versionada en [`src/_data/turnstile.json`](src/_data/turnstile.json) y es el valor
+**por defecto** del build. No hay que exportar nada.
+
+Se cambió porque el diseño anterior fallaba abierto: la real llegaba por variable de entorno y el
+valor por defecto era la llave de prueba de Cloudflare, la que **siempre aprueba**. Quien olvidara
+exportarla publicaba el formulario sin protección real y sin ningún aviso (pasó el 2026-08-06).
+Ahora el olvido produce la clave correcta y la de prueba hay que pedirla a propósito:
+
+```bash
+TURNSTILE_SITE_KEY=1x00000000000000000000AA npx @11ty/eleventy   # solo para pruebas locales
+```
+
+Versionarla no expone nada: según la
+[documentación de Turnstile](https://developers.cloudflare.com/turnstile/get-started/) el sitekey es
+la *"Public key used to invoke the Turnstile widget on your site"* y ya viaja en el HTML público del
+sitio. El que nunca se versiona es `TURNSTILE_SECRET_KEY`, que sigue siendo secreto de Pages.
+
+Y no serviría ponerla en `wrangler.toml`: `[vars]` es binding de **runtime** para Functions, no
+variable de build, y los secretos del dashboard también son runtime-only. Eleventy la necesita en
+build time.
 
 ### 5. Cloudflare Email Routing (para que hola@somospraxevo.com funcione)
 1. Dashboard → tu dominio → **Email → Email Routing** → Enable.

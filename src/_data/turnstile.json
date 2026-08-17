@@ -1,0 +1,13 @@
+{
+  "_origen": "INS-0011 / ENC-0001. Tecnología y Datos, 2026-08-17. Este archivo existe para que la site key REAL de Turnstile deje de depender de que alguien recuerde exportar una variable de entorno antes de cada build.",
+
+  "siteKey": "0x4AAAAAAD_Ifx516X--YZGa",
+
+  "_siteKey_es_publica": "SÍ, y por eso se versiona. Documentación oficial de Cloudflare Turnstile (https://developers.cloudflare.com/turnstile/get-started/, consultada 2026-08-17): el sitekey es la 'Public key used to invoke the Turnstile widget on your site'; el que NUNCA se versiona es el secret key ('Private key used for server-side token validation'), que sigue viviendo solo como secreto de Cloudflare Pages (TURNSTILE_SECRET_KEY) y no aparece en este repo.",
+
+  "_siteKey_fuente": "Medida sobre el HTML servido por producción el 2026-08-17: `curl -s https://somospraxevo.com/contacto/ | grep -o 'data-sitekey=\"[^\"]*\"'` devuelve data-sitekey=\"0x4AAAAAAD_Ifx516X--YZGa\". No es un valor transcrito de memoria ni leído de una pantalla: es el que el sitio ya publica.",
+
+  "_por_que_no_va_en_wrangler_toml": "Porque no serviría. El bloque [vars] de wrangler.toml es un binding de RUNTIME para Pages Functions, no una variable de build (docs de Cloudflare, Pages → Functions → Wrangler configuration, consultada 2026-08-17). Eleventy la necesita en build time, en process.env. Lo mismo aplica al secreto TURNSTILE_SITE_KEY creado en el dashboard el 2026-08-17: los secretos de Pages son runtime-only, 'you can only access secrets programmatically on context.env'. Ninguno de los dos llega al build.",
+
+  "_como_forzar_la_llave_de_prueba": "Exportando TURNSTILE_SITE_KEY=1x00000000000000000000AA antes del build. La llave de prueba de Cloudflare SIEMPRE aprueba, así que ahora hay que pedirla a propósito en vez de caer en ella por olvido."
+}

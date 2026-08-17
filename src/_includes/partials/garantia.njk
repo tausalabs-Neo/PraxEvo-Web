@@ -1,0 +1,26 @@
+{#
+  Bloque "Garantía y derecho de retracto".
+
+  TEXTO DE LEGAL Y RIESGO — NO SE REESCRIBE DESDE ESTA ÁREA.
+  Fuente literal: ENC-0001, "Registro de ejecución — 2026-08-16, Legal y Riesgo",
+  punto 7, subsección "Texto listo para publicar". Handoff HO-7 → Tecnología y Datos.
+  Si el texto tiene un error, se devuelve por handoff a Legal; no se corrige aquí
+  (regla 2 de la carta de Tecnología y Datos).
+
+  El único valor que esta plantilla inyecta es el correo de atención, que Legal dejó
+  en blanco a propósito: viene de src/_data/legal.json, donde está documentado su estado.
+
+  Obligación que cumple: art. 46 num. 4 de la Ley 1480 de 2011 — el derecho de retracto
+  y su término deben informarse ANTES de la adquisición, no en un correo posterior.
+#}
+<div id="garantia" style="border:1px solid var(--border); border-left:3px solid var(--green); border-radius:var(--radius); padding:24px; background:var(--white);">
+  <h2 style="font-size:18px; margin-bottom:12px;">Garantía y derecho de retracto</h2>
+
+  <p style="margin-bottom:12px;">Tienes <strong>quince (15) días calendario</strong> desde la compra para solicitar la devolución total de tu dinero, sin necesidad de explicar por qué. La solicitud se hace desde la plataforma de pago donde compraste.</p>
+
+  <p style="margin-bottom:12px;">Este plazo es <strong>adicional y más amplio</strong> que el derecho de retracto que te reconoce el artículo 47 de la Ley 1480 de 2011 (Estatuto del Consumidor) para las compras hechas a distancia, que es de cinco (5) días hábiles contados desde la celebración del contrato. Ninguna condición de esta página limita ese derecho legal.</p>
+
+  <p style="margin-bottom:12px;">El reintegro del dinero se realiza por el mismo medio de pago que usaste. Los tiempos de acreditación dependen de tu entidad financiera o del operador de tu tarjeta.</p>
+
+  <p style="margin-bottom:0;">Para ejercer cualquiera de los dos derechos, o para cualquier reclamación, escríbenos a <strong><a href="mailto:{{ legal.correoAtencion }}">{{ legal.correoAtencion }}</a></strong>.</p>
+</div>
