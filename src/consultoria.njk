@@ -15,7 +15,7 @@ faq:
 ---
 <section class="page-hero orange-kicker">
   <div class="wrap">
-    <p class="kicker">PraxEvo Consulting</p>
+    <p class="eyebrow orange">PraxEvo Consulting</p>
     <h1>Diagnóstico, diseño e implementación para que tu operación no dependa de improvisar</h1>
     <p>Diagnóstico, diseño e implementación — entregables concretos, no presentaciones. Cotización por proyecto, sin retainer obligatorio.</p>
     {# CTA temprano — ENC-0020/HO-38, frente 5. Hallazgo propio de Marca y Contenido: de las
@@ -28,12 +28,15 @@ faq:
   </div>
 </section>
 
-{# TL;DR — ENC-0020/HO-38. Fuente: proceso real de 4 pasos ya publicado abajo. #}
+{# TL;DR — ENC-0020/HO-38. Fuente: proceso real de 4 pasos ya publicado abajo.
+   Envoltorio pasado a .callout el 2026-08-19 (ENC-0022) — componente "Callout" del Design System Fase 1. #}
 <section class="block" style="padding-bottom:0;">
   <div class="wrap" style="max-width:760px;">
-    <p style="font-size:15px; line-height:1.7; color:var(--carbon); background:var(--bg-light); border-left:3px solid var(--green); padding:18px 22px;">
-      <strong>En resumen:</strong> diagnóstico, diseño, implementación acompañada y medición contra la línea base — un proceso de cuatro pasos, cotizado por proyecto, sin retainer obligatorio. El método viene de haberlo operado en una aerolínea de bajo costo y en una fintech de alto volumen antes de adaptarlo a una pyme.
-    </p>
+    <div class="callout">
+      <p>
+        <strong>En resumen:</strong> diagnóstico, diseño, implementación acompañada y medición contra la línea base — un proceso de cuatro pasos, cotizado por proyecto, sin retainer obligatorio. El método viene de haberlo operado en una aerolínea de bajo costo y en una fintech de alto volumen antes de adaptarlo a una pyme.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -50,7 +53,7 @@ faq:
         { num: "04", title: "Medición", desc: "Medimos resultados frente a la línea base y ajustamos lo que haga falta." }
       ] %}
       <div>
-        <p style="font-family:var(--font-impact); font-size:38px; color:var(--green); margin-bottom:10px;">{{ p.num }}</p>
+        <span class="step-num">{{ p.num }}</span>
         <p style="font-family:var(--font-display); font-weight:700; font-size:16px; color:var(--navy); margin-bottom:8px;">{{ p.title }}</p>
         <p style="font-size:13.5px; color:var(--carbon);">{{ p.desc }}</p>
       </div>
@@ -72,19 +75,22 @@ faq:
         { name: "Rediseño Integral", duration: "6–8 semanas", items: ["Diagnóstico completo", "Rediseño de procesos CX y operativos", "Plan de implementación detallado"] },
         { name: "Acompañamiento Continuo", duration: "3–6 meses", items: ["Rediseño integral incluido", "Implementación acompañada", "Revisiones periódicas de resultados"] }
       ] %}
-      <div style="background:var(--white); border:1px solid var(--border); padding:32px; display:flex; flex-direction:column; gap:16px;">
+      {# Tarjeta de servicio ampliada — ENC-0022 (Design System Fase 1, "Cards"),
+         extraída del <div style="..."> suelto. Badge cambiado de .pending-badge
+         (naranja, advertencia) a .badge-pending (gris, "Próximamente" — Forms):
+         el estado real es "no confirmado todavía", no una alerta de contenido
+         de ejemplo, que ya cubre el .pending-note de arriba. #}
+      <div class="card-service">
         <div>
           <p style="font-family:var(--font-display); font-weight:700; font-size:19px; color:var(--navy); margin-bottom:6px;">{{ pkg.name }}</p>
-          <p style="font-size:12.5px; color:var(--muted);">{{ pkg.duration }}</p>
+          <p class="meta">{{ pkg.duration }}</p>
         </div>
-        <div style="display:flex; flex-direction:column; gap:10px; flex:1;">
+        <div class="list" style="flex:1;">
           {% for it in pkg.items %}
-          <p style="font-size:13.5px; line-height:1.5; color:var(--carbon); padding-left:16px; position:relative;">
-            <span style="position:absolute; left:0; color:var(--green);">–</span>{{ it }}
-          </p>
+          <p><span>–</span>{{ it }}</p>
           {% endfor %}
         </div>
-        <span class="pending-badge" style="align-self:flex-start;">Cotización por proyecto</span>
+        <span class="badge-pending" style="align-self:flex-start;">Cotización por proyecto</span>
         <a href="/contacto/" class="btn btn-ghost-dark" style="margin-top:8px;">Agenda una llamada</a>
       </div>
       {% endfor %}
@@ -103,23 +109,23 @@ faq:
 <section class="block">
   <div class="wrap" style="max-width:760px;">
     <h2 style="font-size:clamp(24px,3vw,30px); margin-bottom:24px;">Preguntas frecuentes</h2>
-    <div style="display:flex; flex-direction:column; gap:20px;">
-      <div>
-        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿Cuánto cuesta una consultoría de procesos?</h3>
-        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">Se cotiza por proyecto, según el alcance real de tu operación — no hay tarifa publicada de catálogo todavía. Agenda un diagnóstico gratuito para tener un número concreto.</p>
-      </div>
-      <div>
-        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿Cómo es el proceso, paso a paso?</h3>
-        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">Diagnóstico (mapeamos tu operación actual), Diseño (el proceso objetivo y el plan, priorizado por impacto), Implementación (acompañamiento directo con tu equipo) y Medición (resultados contra la línea base).</p>
-      </div>
-      <div>
-        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿Necesito contrato de permanencia (retainer)?</h3>
-        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">No. Se cotiza por proyecto, sin retainer obligatorio.</p>
-      </div>
-      <div>
-        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿En qué se diferencia esto de contratar una consultora grande?</h3>
-        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">El método viene de haberlo operado, no de un marco teórico: se probó en una aerolínea de bajo costo y en una fintech de alto volumen antes de adaptarse a una pyme. PraxEvo no compite por licitación corporativa ni por transformación total de C-suite — trabaja por unidad de negocio o proceso concreto, con resultado medible.</p>
-      </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Cuánto cuesta una consultoría de procesos?</summary>
+        <p class="faq-answer">Se cotiza por proyecto, según el alcance real de tu operación — no hay tarifa publicada de catálogo todavía. Agenda un diagnóstico gratuito para tener un número concreto.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cómo es el proceso, paso a paso?</summary>
+        <p class="faq-answer">Diagnóstico (mapeamos tu operación actual), Diseño (el proceso objetivo y el plan, priorizado por impacto), Implementación (acompañamiento directo con tu equipo) y Medición (resultados contra la línea base).</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Necesito contrato de permanencia (retainer)?</summary>
+        <p class="faq-answer">No. Se cotiza por proyecto, sin retainer obligatorio.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿En qué se diferencia esto de contratar una consultora grande?</summary>
+        <p class="faq-answer">El método viene de haberlo operado, no de un marco teórico: se probó en una aerolínea de bajo costo y en una fintech de alto volumen antes de adaptarse a una pyme. PraxEvo no compite por licitación corporativa ni por transformación total de C-suite — trabaja por unidad de negocio o proceso concreto, con resultado medible.</p>
+      </details>
     </div>
   </div>
 </section>

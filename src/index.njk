@@ -20,36 +20,43 @@ faq:
   <div class="hero-glow glow-1" aria-hidden="true"></div>
   <div class="hero-glow glow-2" aria-hidden="true"></div>
   <div class="wrap">
-    <p class="kicker">Cursos online · Consultoría en CX y Operaciones</p>
+    <p class="eyebrow">Cursos online · Consultoría en CX y Operaciones</p>
     <h1>No cursos. <span class="accent">Método.</span> Práctica que evoluciona tu negocio.</h1>
     <p class="lead">Metodología probada en aviación de bajo costo y fintech de alto volumen, adaptada a la realidad operativa de tu pyme. Del método a los resultados.</p>
     <div class="cta-row">
       <a href="/cursos/" class="btn btn-primary">Ver cursos</a>
       <a href="/contacto/" class="btn btn-ghost-light">Agenda una consultoría</a>
     </div>
+    {# Franja de prueba — ENC-0022: solo "15" es dato numérico real, así que solo esa
+       celda usa el patrón "DATO" (Bebas Neue) del Design System Fase 1; "Aviación" y
+       "Fintech" son etiquetas, no cifras, y dejan de forzar Bebas Neue (el propio
+       sistema dice "nunca para prosa"). Ver ENC-0021, fila "Franja de prueba". #}
     <div class="proof">
       <div>
-        <p class="n">+15 años</p>
+        <p class="n">15<span class="n-suffix">años</span></p>
         <p class="t">de experiencia operativa real en CX y procesos</p>
       </div>
       <div>
-        <p class="n">Aviación</p>
+        <p class="label">Aviación</p>
         <p class="t">Método aplicado en aerolínea de bajo costo</p>
       </div>
       <div>
-        <p class="n">Fintech</p>
+        <p class="label">Fintech</p>
         <p class="t">Método aplicado en fintech de alto volumen</p>
       </div>
     </div>
   </div>
 </section>
 
-{# TL;DR — ENC-0020/HO-38. Fuente: Constitución PraxEvo, sección 1 (enmienda 2026-08-18), definición citada verbatim; hero de index.njk para los dos sectores. #}
+{# TL;DR — ENC-0020/HO-38. Fuente: Constitución PraxEvo, sección 1 (enmienda 2026-08-18), definición citada verbatim; hero de index.njk para los dos sectores.
+   Envoltorio pasado a .callout el 2026-08-19 (ENC-0022) — componente "Callout" del Design System Fase 1; el texto no cambia. #}
 <section class="block" style="padding-top:0;">
   <div class="wrap" style="max-width:760px;">
-    <p style="font-size:15px; line-height:1.7; color:var(--carbon); background:var(--bg-light); border-left:3px solid var(--green); padding:18px 22px;">
-      <strong>En resumen:</strong> PraxEvo hace dos cosas — consultoría (Consulting) y formación (Academy) — sobre los mismos tres pilares: operaciones, procesos y experiencia del cliente. El fin al que apunta cada proyecto es que el cliente llegue a <strong>operaciones inteligentes: conectadas a resultados, automatizadas donde el trabajo se repite, humanas donde agregan valor, y medidas por la experiencia del cliente.</strong> El método no es teoría: se aplicó primero en una aerolínea de bajo costo y en una fintech de alto volumen, antes de convertirse en curso o proyecto de consultoría.
-    </p>
+    <div class="callout">
+      <p>
+        <strong>En resumen:</strong> PraxEvo hace dos cosas — consultoría (Consulting) y formación (Academy) — sobre los mismos tres pilares: operaciones, procesos y experiencia del cliente. El fin al que apunta cada proyecto es que el cliente llegue a <strong>operaciones inteligentes: conectadas a resultados, automatizadas donde el trabajo se repite, humanas donde agregan valor, y medidas por la experiencia del cliente.</strong> El método no es teoría: se aplicó primero en una aerolínea de bajo costo y en una fintech de alto volumen, antes de convertirse en curso o proyecto de consultoría.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -60,7 +67,7 @@ faq:
         <p class="eyebrow">PraxEvo Academy</p>
         <h2>Cursos destacados</h2>
       </div>
-      <a href="/cursos/" style="font-weight:600; font-size:14.5px; color:var(--navy); white-space:nowrap;">Ver todos los cursos →</a>
+      <a href="/cursos/" class="btn-ghost">Ver todos los cursos →</a>
     </div>
 
     {# Regla de revisión cambiaria (ENC-0001, aprobada 2026-08-03): si la TRM del Banco de la República supera 3.785 COP/USD, este precio en pesos (COP 299.000) debe revisarse — a esa TRM equivale a USD 79, el piso del manual de marca. #}
@@ -80,7 +87,7 @@ faq:
           <div class="card-foot" style="flex-direction:column; align-items:flex-start; gap:8px;">
             <div style="display:flex; justify-content:space-between; align-items:center; width:100%;">
               <span class="price">{{ c.priceUsd }} · {{ c.priceCop }}</span>
-              <a href="/contacto/" class="cta-link">Escríbenos para inscribirte →</a>
+              <a href="/contacto/" class="btn-ghost sm">Escríbenos para inscribirte →</a>
               {# TODO: reemplazar por el enlace real de Hotmart cuando Academy publique el curso #}
             </div>
             <span style="font-size:12px; color:var(--muted);">{{ c.installments }}</span>
@@ -100,17 +107,21 @@ faq:
         <p class="eyebrow orange">PraxEvo Consulting</p>
         <h2>Consultoría para pymes que quieren operar mejor</h2>
       </div>
-      <a href="/consultoria/" style="font-weight:600; font-size:14.5px; color:var(--navy); white-space:nowrap;">Conoce el proceso completo →</a>
+      <a href="/consultoria/" class="btn-ghost">Conoce el proceso completo →</a>
     </div>
+    {# Tarjetas de servicio — ENC-0022, extraídas de <div style="..."> suelto a
+       .card-service (Design System Fase 1, "Cards"). Títulos y descripciones sin
+       cambio; "Rediseño de Procesos CX" repite lenguaje de un solo pilar, señalado
+       por ENC-0021 para la próxima pasada de copy, no se reescribe aquí. #}
     <div class="divider-grid grid-3">
       {% for s in [
         { title: "Diagnóstico Operativo", desc: "Mapeamos procesos, tiempos y puntos de fricción en tu operación actual." },
         { title: "Rediseño de Procesos CX", desc: "Rediseñamos flujos de atención y operación con foco en experiencia y eficiencia." },
         { title: "Implementación Acompañada", desc: "Te acompañamos en la puesta en marcha, con seguimiento y ajuste continuo." }
       ] %}
-      <div style="background:var(--white); padding:32px;">
-        <p style="font-family:var(--font-display); font-weight:700; font-size:18px; color:var(--navy); margin-bottom:10px;">{{ s.title }}</p>
-        <p style="font-size:14px; color:var(--carbon);">{{ s.desc }}</p>
+      <div class="card-service">
+        <p class="title">{{ s.title }}</p>
+        <p class="desc">{{ s.desc }}</p>
       </div>
       {% endfor %}
     </div>
@@ -126,7 +137,7 @@ faq:
       <p class="eyebrow">Sobre los fundadores</p>
       <h2 style="font-size:clamp(24px,3vw,30px); margin:16px 0 14px;">John Steven Santana &amp; Viviana Ricardo</h2>
       <p style="font-size:15.5px; color:var(--carbon); max-width:600px; margin-bottom:18px;">El método nace de años de experiencia operando experiencia de cliente y procesos en sectores como aviación de bajo costo y fintech de alto volumen antes de fundar PraxEvo. Lo que enseñan no viene de teoría — viene de haberlo ejecutado en entornos de alta presión.</p>
-      <a href="/nosotros/" style="font-weight:600; font-size:14.5px; color:var(--navy);">Conoce al equipo →</a>
+      <a href="/nosotros/" class="btn-ghost">Conoce al equipo →</a>
     </div>
   </div>
 </section>
@@ -134,27 +145,29 @@ faq:
 <section class="block">
   <div class="wrap" style="max-width:760px;">
     <h2 style="font-size:clamp(24px,3vw,30px); margin-bottom:24px;">Preguntas frecuentes</h2>
-    <div style="display:flex; flex-direction:column; gap:20px;">
-      <div>
-        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿Qué es "operaciones inteligentes"?</h3>
-        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">Operaciones inteligentes: conectadas a resultados, automatizadas donde el trabajo se repite, humanas donde agregan valor, y medidas por la experiencia del cliente.</p>
-      </div>
-      <div>
-        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿PraxEvo es solo experiencia del cliente (CX)?</h3>
-        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">No. PraxEvo trabaja tres pilares — operaciones, procesos y experiencia del cliente — nunca uno solo.</p>
-      </div>
-      <div>
-        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿En qué sectores se probó el método?</h3>
-        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">En una aerolínea de bajo costo y en una fintech de alto volumen, antes de adaptarse a la escala de una pyme.</p>
-      </div>
-      <div>
-        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿PraxEvo trabaja con empresas de cualquier tamaño?</h3>
-        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">Sí, con un plan de entrada por segmento: hoy prioriza pyme y mediana, y atiende empresa grande solo por unidad de negocio o gerencia media, nunca por licitación corporativa.</p>
-      </div>
-      <div>
-        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿Cómo empiezo, con un curso o con consultoría?</h3>
-        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">Depende de tu presupuesto y de qué tan armado tenga tu equipo: el curso ("Del caos operativo al cliente fidelizado", USD 97) es la puerta de entrada de bajo costo y se hace solo; la consultoría es acompañamiento directo, cotizado por proyecto.</p>
-      </div>
+    {# Acordeón nativo <details>/<summary> — ENC-0022. Sin componente Fase 1 (declarado
+       en ENC-0021, no inventado); estilizado con los tokens de tipografía ya fijados. #}
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Qué es "operaciones inteligentes"?</summary>
+        <p class="faq-answer">Operaciones inteligentes: conectadas a resultados, automatizadas donde el trabajo se repite, humanas donde agregan valor, y medidas por la experiencia del cliente.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿PraxEvo es solo experiencia del cliente (CX)?</summary>
+        <p class="faq-answer">No. PraxEvo trabaja tres pilares — operaciones, procesos y experiencia del cliente — nunca uno solo.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿En qué sectores se probó el método?</summary>
+        <p class="faq-answer">En una aerolínea de bajo costo y en una fintech de alto volumen, antes de adaptarse a la escala de una pyme.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿PraxEvo trabaja con empresas de cualquier tamaño?</summary>
+        <p class="faq-answer">Sí, con un plan de entrada por segmento: hoy prioriza pyme y mediana, y atiende empresa grande solo por unidad de negocio o gerencia media, nunca por licitación corporativa.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cómo empiezo, con un curso o con consultoría?</summary>
+        <p class="faq-answer">Depende de tu presupuesto y de qué tan armado tenga tu equipo: el curso ("Del caos operativo al cliente fidelizado", USD 97) es la puerta de entrada de bajo costo y se hace solo; la consultoría es acompañamiento directo, cotizado por proyecto.</p>
+      </details>
     </div>
   </div>
 </section>

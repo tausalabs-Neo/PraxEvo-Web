@@ -13,27 +13,33 @@ faq:
 ---
 <section class="page-hero">
   <div class="wrap">
-    <p class="kicker">Contacto</p>
+    <p class="eyebrow">Contacto</p>
     <h1>Hablemos de tu operación.</h1>
   </div>
 </section>
 
 {# TL;DR — ENC-0020/HO-38. Fuente: contacto.njk, ya publicado (correo, ubicación, campo
    "Me interesa" del formulario). Deliberadamente sin cifra de tiempo de respuesta —
-   ver hallazgo de Marca y Contenido más abajo, junto al H2 "Otras formas de contacto". #}
+   ver hallazgo de Marca y Contenido más abajo, junto al H2 "Otras formas de contacto".
+   Envoltorio pasado a .callout el 2026-08-19 (ENC-0022) — componente "Callout" del Design System Fase 1. #}
 <section class="block" style="padding-bottom:0;">
   <div class="wrap" style="max-width:760px;">
-    <p style="font-size:15px; line-height:1.7; color:var(--carbon); background:var(--bg-light); border-left:3px solid var(--green); padding:18px 22px;">
-      <strong>En resumen:</strong> cuéntanos tu operación en el formulario o escríbenos directo a hola@somospraxevo.com. Atendemos toda LatAm de forma remota, con base en Bogotá. Si todavía no sabes si necesitas un curso o una consultoría, dilo en el mensaje — cualquiera de los dos empieza por acá.
-    </p>
-    <p style="font-size:14px; color:var(--carbon); margin-top:14px;">¿No sabes cuál te conviene? Compara <a href="/cursos/" style="font-weight:600; color:var(--navy);">el curso</a> y <a href="/consultoria/" style="font-weight:600; color:var(--navy);">la consultoría</a> antes de escribirnos.</p>
+    <div class="callout">
+      <p>
+        <strong>En resumen:</strong> cuéntanos tu operación en el formulario o escríbenos directo a hola@somospraxevo.com. Atendemos toda LatAm de forma remota, con base en Bogotá. Si todavía no sabes si necesitas un curso o una consultoría, dilo en el mensaje — cualquiera de los dos empieza por acá.
+      </p>
+      <p style="font-size:14px;">¿No sabes cuál te conviene? Compara <a href="/cursos/" style="font-weight:600; color:var(--navy);">el curso</a> y <a href="/consultoria/" style="font-weight:600; color:var(--navy);">la consultoría</a> antes de escribirnos.</p>
+    </div>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap" style="display:grid; grid-template-columns:1.3fr 1fr; gap:clamp(32px,6vw,64px);">
     <div>
-      <h2 style="font-size:20px; margin-bottom:16px;">Escríbenos</h2>
+      {# ENC-0022: tamaño homologado al H2 estándar que ya usan el resto de páginas
+         (clamp 24-30px), en vez del 20px suelto — mismo tratamiento que "El curso"
+         en Cursos o "Cómo trabajamos" en Consultoría. #}
+      <h2 style="font-size:clamp(24px,3vw,30px); margin-bottom:16px;">Escríbenos</h2>
       <div id="form-status" class="form-status" aria-live="polite"></div>
 
       <form id="contact-form" novalidate>
@@ -86,7 +92,7 @@ faq:
     </div>
 
     <div style="display:flex; flex-direction:column; gap:26px;">
-      <h2 style="font-size:20px;">Otras formas de contacto</h2>
+      <h2 style="font-size:clamp(24px,3vw,30px);">Otras formas de contacto</h2>
       <div>
         <p class="eyebrow" style="margin-bottom:10px;">Correo</p>
         <p style="font-size:15.5px; color:var(--navy); font-weight:600;">hola@somospraxevo.com</p>
@@ -116,19 +122,19 @@ faq:
 <section class="block" style="padding-top:0;">
   <div class="wrap" style="max-width:760px;">
     <h2 style="font-size:clamp(24px,3vw,30px); margin-bottom:24px;">Preguntas frecuentes</h2>
-    <div style="display:flex; flex-direction:column; gap:20px;">
-      <div>
-        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿Cómo contacto a PraxEvo?</h3>
-        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">Por el formulario de esta página o escribiendo directo a hola@somospraxevo.com.</p>
-      </div>
-      <div>
-        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿Atienden fuera de Colombia?</h3>
-        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">Sí, atención remota en toda LatAm, con base en Bogotá.</p>
-      </div>
-      <div>
-        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿Qué escribo si todavía no sé si quiero un curso o una consultoría?</h3>
-        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">Dilo en el mensaje — el formulario tiene un campo "Me interesa" con esa opción, y respondemos orientando cuál conviene según tu caso.</p>
-      </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Cómo contacto a PraxEvo?</summary>
+        <p class="faq-answer">Por el formulario de esta página o escribiendo directo a hola@somospraxevo.com.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Atienden fuera de Colombia?</summary>
+        <p class="faq-answer">Sí, atención remota en toda LatAm, con base en Bogotá.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué escribo si todavía no sé si quiero un curso o una consultoría?</summary>
+        <p class="faq-answer">Dilo en el mensaje — el formulario tiene un campo "Me interesa" con esa opción, y respondemos orientando cuál conviene según tu caso.</p>
+      </details>
     </div>
   </div>
 </section>

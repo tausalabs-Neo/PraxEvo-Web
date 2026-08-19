@@ -206,6 +206,18 @@ section.block { padding: clamp(56px, 8vw, 96px) 0; }
 .sec-head p { color: var(--muted); font-size: 16.5px; }
 
 /* ============================================================
+   Rótulo de sección en hero (ENC-0022) — homologado a .eyebrow
+   ------------------------------------------------------------
+   Antes: .hero .kicker / .page-hero .kicker, sin la barra verde
+   de 20-26px que el Design System Fase 1 define para "Rótulo de
+   sección (eyebrow)". Se reusa el mismo componente .eyebrow que ya
+   opera en 12+ instancias del cuerpo del sitio, en vez de crear una
+   tercera variante — ver ENC-0022, "Trabajo", decisión de unificación.
+   ============================================================ */
+.hero .eyebrow { margin-bottom: 20px; }
+.page-hero .eyebrow { margin-bottom: 16px; }
+
+/* ============================================================
    Buttons — min 44px touch target, no layout-shifting hovers
    ============================================================ */
 .btn {
@@ -229,6 +241,20 @@ section.block { padding: clamp(56px, 8vw, 96px) 0; }
 
 .btn-ghost-dark { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
 .btn-ghost-dark:hover, .btn-ghost-dark:focus-visible { background: var(--navy); color: var(--white); }
+
+/* ============================================================
+   btn-ghost — enlace de texto sin fondo (ENC-0022, Design System
+   Fase 1, "Buttons"). Antes: cinco instancias de <a style="...">
+   repetidas a mano ("Ver todos los cursos →", "Conoce el proceso
+   completo →", "Conoce al equipo →") y .card-foot .cta-link para
+   "Escríbenos para inscribirte →". Se extraen a una sola clase.
+   ============================================================ */
+.btn-ghost {
+  font-family: var(--font-body); font-weight: 600; font-size: 14.5px;
+  color: #00875f; white-space: nowrap;
+}
+.btn-ghost:hover, .btn-ghost:focus-visible { color: var(--green); }
+.btn-ghost.sm { font-size: 13px; font-weight: 700; white-space: normal; }
 
 /* ============================================================
    Header / Nav
@@ -319,21 +345,23 @@ section.block { padding: clamp(56px, 8vw, 96px) 0; }
 .hero .glow-1 { width: 480px; height: 480px; background: rgba(0,200,150,0.16); top: -160px; right: -140px; }
 .hero .glow-2 { width: 420px; height: 420px; background: rgba(232,98,26,0.10); bottom: -200px; left: -160px; }
 .hero .wrap { position: relative; z-index: 2; max-width: 900px; }
-.hero .kicker { font-size: 12px; letter-spacing: 3px; color: var(--green); text-transform: uppercase; font-weight: 600; margin-bottom: 20px; }
 .hero h1 { font-size: clamp(36px, 6vw, 64px); font-weight: 700; color: var(--white); margin-bottom: 22px; text-wrap: balance; }
 .hero h1 .accent { color: var(--green); }
 .hero p.lead { font-size: clamp(17px, 2.2vw, 21px); color: var(--white-70); max-width: 620px; margin-bottom: 36px; }
 .hero .cta-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 52px; }
 .hero .proof { display: flex; gap: clamp(24px, 4vw, 52px); flex-wrap: wrap; border-top: 1px solid var(--navy-line); padding-top: 28px; }
-.hero .proof .n { font-family: var(--font-impact); font-size: 32px; color: var(--green); letter-spacing: 1px; line-height: 1; }
+/* .n: solo la celda numérica real (primer hijo) es "dato" en Bebas Neue,
+   por regla del Design System Fase 1 ("Bebas Neue... nunca para prosa") —
+   ver ENC-0022, decisión sobre la franja de prueba del hero. */
+.hero .proof .n { font-family: var(--font-impact); font-size: 64px; color: var(--green); letter-spacing: 1px; line-height: 1; }
+.hero .proof .n-suffix { font-family: var(--font-body); font-size: 18px; font-weight: 600; letter-spacing: 0; margin-left: 4px; }
+.hero .proof .label { font-family: var(--font-body); font-size: 22px; font-weight: 700; color: var(--white); line-height: 1; }
 .hero .proof .t { font-size: 12.5px; color: var(--white-40); margin-top: 6px; }
 
 .page-hero {
   background: var(--navy); color: var(--white);
   padding: clamp(56px, 8vw, 96px) 0 clamp(32px, 5vw, 48px);
 }
-.page-hero .kicker { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; margin-bottom: 16px; color: var(--green); }
-.page-hero.orange-kicker .kicker { color: var(--orange); }
 .page-hero h1 { font-size: clamp(32px, 5vw, 48px); color: var(--white); max-width: 760px; margin-bottom: 16px; text-wrap: balance; }
 .page-hero p { font-size: 16px; color: var(--white-70); max-width: 580px; line-height: 1.7; }
 
@@ -365,22 +393,89 @@ section.block { padding: clamp(56px, 8vw, 96px) 0; }
   margin-top: 8px; padding-top: 16px; border-top: 1px solid var(--border);
 }
 .card-foot .price { font-family: var(--font-impact); font-size: 20px; color: var(--navy); letter-spacing: 1px; }
-.card-foot .cta-link { font-size: 13px; font-weight: 700; color: var(--orange); cursor: pointer; }
 
-/* Pending-content badge — visible flag so example copy is never mistaken for real data */
-.pending-badge {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
-  color: var(--orange); background: rgba(232,98,26,0.1);
-  border: 1px solid rgba(232,98,26,0.35);
-  padding: 4px 10px; border-radius: 100px; text-transform: uppercase;
-}
+/* Pending-content badge — visible flag so example copy is never mistaken for real data.
+   Distinto de .badge-pending (abajo): este es una ADVERTENCIA de contenido de ejemplo,
+   se queda naranja a propósito. */
 .pending-note {
   border: 1px dashed rgba(232,98,26,0.45); background: rgba(232,98,26,0.05);
   padding: 16px 20px; font-size: 13.5px; color: var(--carbon); margin: 0 0 32px;
   border-radius: var(--radius);
 }
 .pending-note strong { color: var(--orange); }
+
+/* ============================================================
+   Tarjeta de servicio (ENC-0022, Design System Fase 1, "Cards").
+   Antes: <div style="background:...; padding:32px;"> suelto,
+   repetido a mano en Home (3), Nosotros (4) y las tres tarjetas
+   de "Paquetes de trabajo" de Consultoría.
+   ============================================================ */
+.card-service {
+  background: var(--white); border-top: 3px solid var(--green);
+  padding: 20px 24px 24px; display: flex; flex-direction: column; gap: 10px;
+}
+.card-service .title { font-family: var(--font-display); font-weight: 600; font-size: 15px; color: var(--navy); }
+.card-service .desc { font-family: var(--font-body); font-size: 12.5px; line-height: 1.6; color: var(--carbon); }
+.card-service .meta { font-size: 12.5px; color: var(--muted); }
+.card-service .list { display: flex; flex-direction: column; gap: 10px; }
+.card-service .list p { font-size: 13.5px; line-height: 1.5; color: var(--carbon); padding-left: 16px; position: relative; }
+.card-service .list p span { position: absolute; left: 0; color: var(--green); }
+
+/* Badge — Próximamente (ENC-0022, Design System Fase 1, "Forms").
+   Distinto de .pending-badge/.pending-note: no es advertencia de
+   contenido de ejemplo, es estado neutro ("no confirmado todavía"). */
+.badge-pending {
+  display: inline-flex; align-items: center;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
+  color: var(--muted); background: var(--bg-light);
+  border: 1px solid var(--border);
+  padding: 4px 10px; border-radius: 100px; text-transform: uppercase;
+}
+
+/* Círculo numerado — "Migas de pan / pasos de proceso" (ENC-0022,
+   Design System Fase 1, "Navigation"), variante neutra sin paso
+   activo. Antes: número suelto en Bebas Neue 38px sin círculo. */
+.step-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: #E8E8E8; color: var(--muted);
+  font-family: var(--font-display); font-weight: 700; font-size: 16px;
+  margin-bottom: 14px;
+}
+
+/* Callout (ENC-0022, Design System Fase 1, "Cards" — "Callout —
+   definición de operaciones inteligentes"). Usado para los bloques
+   TL;DR de ENC-0020/HO-38 en las cinco páginas y, por homologación
+   recomendada en la especificación, para garantia.njk. */
+.callout {
+  background: rgba(0,200,150,0.05);
+  border: 1px solid rgba(0,200,150,0.25);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+}
+.callout p { font-size: 15px; line-height: 1.7; color: var(--carbon); }
+.callout p + p { margin-top: 10px; }
+
+/* ============================================================
+   FAQ — acordeón nativo <details>/<summary> (ENC-0022). El Design
+   System Fase 1 no define un componente de acordeón (declarado en
+   ENC-0021, no inventado); se estiliza el elemento nativo con los
+   tokens de tipografía ya fijados (H de Space Grotesk, cuerpo Inter).
+   ============================================================ */
+.faq-list { display: flex; flex-direction: column; gap: 4px; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item summary {
+  font-family: var(--font-display); font-weight: 600; font-size: 16px; color: var(--navy);
+  cursor: pointer; list-style: none; padding: 14px 0;
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+"; font-family: var(--font-display); font-size: 20px; color: var(--green);
+  flex-shrink: 0; transition: transform var(--transition); line-height: 1;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item .faq-answer { font-size: 14.5px; line-height: 1.6; color: var(--carbon); padding: 0 0 16px; }
 
 /* ============================================================
    Chips / filters
@@ -408,6 +503,17 @@ input, textarea, select {
 textarea { min-height: 120px; resize: vertical; }
 input::placeholder, textarea::placeholder { color: #B3B3B3; }
 input:invalid[data-touched="true"], textarea:invalid[data-touched="true"] { border-color: var(--orange); }
+/* Foco de campo (ENC-0022, Design System Fase 1, "Forms") — se suma al
+   outline genérico de accesibilidad (arriba), no lo reemplaza. */
+input:focus-visible, select:focus-visible, textarea:focus-visible {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(0,200,150,0.15);
+}
+/* Checkbox — outline (ENC-0022, Design System Fase 1, "Forms"). Implementación
+   pragmática con accent-color (soporte amplio en navegadores modernos) en vez
+   de reconstruir la forma custom completa del artboard; declarado, no una
+   réplica pixel-perfect del componente. */
+input[type="checkbox"] { accent-color: var(--green); width: 18px; height: 18px; min-height: 0; }
 .field-error {
   font-size: 12.5px; color: var(--orange); font-weight: 600; min-height: 16px;
 }

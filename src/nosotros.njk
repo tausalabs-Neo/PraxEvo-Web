@@ -13,7 +13,7 @@ faq:
 ---
 <section class="page-hero">
   <div class="wrap">
-    <p class="kicker">Sobre nosotros</p>
+    <p class="eyebrow">Sobre nosotros</p>
     <h1>La práctica primero. Siempre.</h1>
   </div>
 </section>
@@ -29,12 +29,15 @@ faq:
   </div>
 </section>
 
-{# TL;DR — ENC-0020/HO-38. Fuente: nosotros.njk, secciones "Nuestra historia" y "Misión", ya publicadas y verificadas en vivo. #}
+{# TL;DR — ENC-0020/HO-38. Fuente: nosotros.njk, secciones "Nuestra historia" y "Misión", ya publicadas y verificadas en vivo.
+   Envoltorio pasado a .callout el 2026-08-19 (ENC-0022) — componente "Callout" del Design System Fase 1. #}
 <section class="block" style="padding-top:0;">
   <div class="wrap" style="max-width:760px;">
-    <p style="font-size:15px; line-height:1.7; color:var(--carbon); background:var(--white); border-left:3px solid var(--green); padding:18px 22px;">
-      <strong>En resumen:</strong> PraxEvo lo fundan John Steven Santana y Viviana Ricardo, con más de 15 años operando procesos y experiencia de cliente en una aerolínea de bajo costo y una fintech de alto volumen — antes de convertir ese método en cursos y consultoría. La misión es que las pymes latinoamericanas operen con la misma disciplina que una compañía grande, sin necesitar su presupuesto.
-    </p>
+    <div class="callout">
+      <p>
+        <strong>En resumen:</strong> PraxEvo lo fundan John Steven Santana y Viviana Ricardo, con más de 15 años operando procesos y experiencia de cliente en una aerolínea de bajo costo y una fintech de alto volumen — antes de convertir ese método en cursos y consultoría. La misión es que las pymes latinoamericanas operen con la misma disciplina que una compañía grande, sin necesitar su presupuesto.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -82,15 +85,18 @@ faq:
        ningún tag de encabezado real — eran <p style="..."> con apariencia visual de
        título, invisibles como estructura para buscadores y lectores de pantalla
        (nosotros.njk, líneas 66-72 antes de este cambio). Se corrige la etiqueta HTML;
-       el texto no cambia, sigue siendo el que ya estaba publicado. #}
+       el texto no cambia, sigue siendo el que ya estaba publicado.
+       ENC-0022: tamaño tipográfico corregido de 20px (no correspondía a ningún nivel
+       documentado) a 24px — "H3/24" del artboard Typography del Design System Fase 1,
+       ver ENC-0021. #}
     <h2 style="font-size:clamp(22px,3vw,26px); margin-bottom:20px;">Misión y visión</h2>
     <div class="grid grid-2">
       <div>
-        <h3 style="font-family:var(--font-display); font-weight:700; font-size:20px; color:var(--navy); margin-bottom:12px;">Misión</h3>
+        <h3 style="font-family:var(--font-display); font-weight:600; font-size:24px; color:var(--navy); margin-bottom:12px;">Misión</h3>
         <p style="font-size:14.5px; line-height:1.7; color:var(--carbon);">Que las pymes latinoamericanas operen con la misma disciplina que las grandes compañías — sin necesitar su presupuesto.</p>
       </div>
       <div>
-        <h3 style="font-family:var(--font-display); font-weight:700; font-size:20px; color:var(--navy); margin-bottom:12px;">Visión</h3>
+        <h3 style="font-family:var(--font-display); font-weight:600; font-size:24px; color:var(--navy); margin-bottom:12px;">Visión</h3>
         <p style="font-size:14.5px; line-height:1.7; color:var(--carbon);">Ser la referencia en CX y operaciones para pymes de habla hispana, dentro y fuera de LatAm.</p>
       </div>
     </div>
@@ -109,9 +115,12 @@ faq:
         { title: "Tuteo profesional", desc: "Cercanos pero sin informalidad excesiva." },
         { title: "Casos reales siempre", desc: "Cada concepto conecta con aviación o fintech." }
       ] %}
-      <div style="background:var(--white); border-top:3px solid var(--green); padding:20px 24px 24px;">
-        <p style="font-family:var(--font-display); font-weight:700; font-size:16px; color:var(--navy); margin-bottom:8px;">{{ v.title }}</p>
-        <p style="font-size:13.5px; line-height:1.6; color:var(--carbon);">{{ v.desc }}</p>
+      {# Ya usaba borde superior verde — coincide con .card-service (ENC-0022,
+         Design System Fase 1, "Cards", "Tarjeta de servicio"); se extrae a la
+         misma clase que Home y Consultoría para compartir un solo componente. #}
+      <div class="card-service">
+        <p class="title">{{ v.title }}</p>
+        <p class="desc">{{ v.desc }}</p>
       </div>
       {% endfor %}
     </div>
@@ -121,19 +130,19 @@ faq:
 <section class="block">
   <div class="wrap" style="max-width:760px;">
     <h2 style="font-size:clamp(24px,3vw,30px); margin-bottom:24px;">Preguntas frecuentes</h2>
-    <div style="display:flex; flex-direction:column; gap:20px;">
-      <div>
-        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿Quiénes fundaron PraxEvo?</h3>
-        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">John Steven Santana y Viviana Ricardo.</p>
-      </div>
-      <div>
-        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿De dónde viene el método de PraxEvo?</h3>
-        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">De la operación real: más de 15 años en una aerolínea de bajo costo y en una fintech de alto volumen, antes de convertirse en curso o consultoría.</p>
-      </div>
-      <div>
-        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿PraxEvo es una agencia de marketing o una escuela de motivación?</h3>
-        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">No. No es una agencia de marketing —el contenido existe para vender método, no como producto— ni una escuela de motivación: el público objetivo ya tiene un negocio y quiere que funcione mejor.</p>
-      </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Quiénes fundaron PraxEvo?</summary>
+        <p class="faq-answer">John Steven Santana y Viviana Ricardo.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿De dónde viene el método de PraxEvo?</summary>
+        <p class="faq-answer">De la operación real: más de 15 años en una aerolínea de bajo costo y en una fintech de alto volumen, antes de convertirse en curso o consultoría.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿PraxEvo es una agencia de marketing o una escuela de motivación?</summary>
+        <p class="faq-answer">No. No es una agencia de marketing —el contenido existe para vender método, no como producto— ni una escuela de motivación: el público objetivo ya tiene un negocio y quiere que funcione mejor.</p>
+      </details>
     </div>
   </div>
 </section>

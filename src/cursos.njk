@@ -22,18 +22,21 @@ faq:
 
 <section class="page-hero">
   <div class="wrap">
-    <p class="kicker">PraxEvo Academy</p>
+    <p class="eyebrow">PraxEvo Academy</p>
     <h1>Aprende a medir tu operación antes de arreglarla</h1>
     <p>Metodología práctica, casos reales de aviación y fintech, disponible en Hotmart. Precio de referencia de lanzamiento: <strong style="color:var(--white);">USD $97</strong>.</p>
   </div>
 </section>
 
-{# TL;DR — ENC-0020/HO-38. Fuente: ENC-0001, estructura real de los 8 módulos y precio, aprobada 2026-08-03; cursos.njk publicado. #}
+{# TL;DR — ENC-0020/HO-38. Fuente: ENC-0001, estructura real de los 8 módulos y precio, aprobada 2026-08-03; cursos.njk publicado.
+   Envoltorio pasado a .callout el 2026-08-19 (ENC-0022) — componente "Callout" del Design System Fase 1. #}
 <section class="block" style="padding-bottom:0;">
   <div class="wrap" style="max-width:760px;">
-    <p style="font-size:15px; line-height:1.7; color:var(--carbon); background:var(--bg-light); border-left:3px solid var(--green); padding:18px 22px;">
-      <strong>En resumen:</strong> un curso, ocho módulos, 100% digital, a tu ritmo, pago único — sin acompañamiento en vivo y sin certificación universitaria. Vas de diagnosticar el proceso que más te cuesta (módulo 1) a un indicador que te avisa antes de que el cliente sienta el fallo (módulo 8), con el método aplicado en una aerolínea de bajo costo y en una fintech de alto volumen. Precio: USD 97 · COP 299.000 (12 cuotas de COP 24.917/mes).
-    </p>
+    <div class="callout">
+      <p>
+        <strong>En resumen:</strong> un curso, ocho módulos, 100% digital, a tu ritmo, pago único — sin acompañamiento en vivo y sin certificación universitaria. Vas de diagnosticar el proceso que más te cuesta (módulo 1) a un indicador que te avisa antes de que el cliente sienta el fallo (módulo 8), con el método aplicado en una aerolínea de bajo costo y en una fintech de alto volumen. Precio: USD 97 · COP 299.000 (12 cuotas de COP 24.917/mes).
+      </p>
+    </div>
   </div>
 </section>
 
@@ -57,7 +60,7 @@ faq:
           <div class="card-foot" style="flex-direction:column; align-items:flex-start; gap:8px;">
             <div style="display:flex; justify-content:space-between; align-items:center; width:100%;">
               <span class="price">{{ c.priceUsd }} · {{ c.priceCop }}</span>
-              <a href="/contacto/" class="cta-link">Escríbenos para inscribirte →</a>
+              <a href="/contacto/" class="btn-ghost sm">Escríbenos para inscribirte →</a>
               {# TODO: reemplazar por el enlace real de Hotmart cuando Academy publique el curso #}
             </div>
             <span style="font-size:12px; color:var(--muted);">{{ c.installments }}</span>
@@ -130,27 +133,27 @@ faq:
 <section class="block">
   <div class="wrap" style="max-width:760px;">
     <h2 style="font-size:clamp(24px,3vw,30px); margin-bottom:24px;">Preguntas frecuentes</h2>
-    <div style="display:flex; flex-direction:column; gap:20px;">
-      <div>
-        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿Qué necesito para hacer el curso?</h3>
-        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">Nada más que tu propia operación: el curso pide que elijas un proceso real de tu empresa y lo midas con tus propios datos. No exige software ni herramienta previa.</p>
-      </div>
-      <div>
-        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿El curso tiene certificado?</h3>
-        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">No lleva certificación reconocida por una universidad. Es un curso 100% digital, a tu ritmo, sin acompañamiento en vivo.</p>
-      </div>
-      <div>
-        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿Cuánto dura?</h3>
-        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">Se mide en módulos, no en horas: son 8, a tu propio ritmo, sin fecha límite. La duración exacta en horas todavía no está definida — no hay contenido de video o lectura producido sobre el cual medirla.</p>
-      </div>
-      <div>
-        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿Cuánto cuesta y hay financiación?</h3>
-        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">USD 97 (COP 299.000), con opción de 12 cuotas de COP 24.917/mes. Precio de referencia de lanzamiento.</p>
-      </div>
-      <div>
-        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿Qué pasa si no me sirve el curso?</h3>
-        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">Tienes derecho de retracto según el artículo 46 de la Ley 1480 de 2011 — el detalle está en la sección de garantía de esta misma página y en <a href="/terminos/" style="color:var(--navy); font-weight:600;">/terminos/</a>.</p>
-      </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿Qué necesito para hacer el curso?</summary>
+        <p class="faq-answer">Nada más que tu propia operación: el curso pide que elijas un proceso real de tu empresa y lo midas con tus propios datos. No exige software ni herramienta previa.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿El curso tiene certificado?</summary>
+        <p class="faq-answer">No lleva certificación reconocida por una universidad. Es un curso 100% digital, a tu ritmo, sin acompañamiento en vivo.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cuánto dura?</summary>
+        <p class="faq-answer">Se mide en módulos, no en horas: son 8, a tu propio ritmo, sin fecha límite. La duración exacta en horas todavía no está definida — no hay contenido de video o lectura producido sobre el cual medirla.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cuánto cuesta y hay financiación?</summary>
+        <p class="faq-answer">USD 97 (COP 299.000), con opción de 12 cuotas de COP 24.917/mes. Precio de referencia de lanzamiento.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué pasa si no me sirve el curso?</summary>
+        <p class="faq-answer">Tienes derecho de retracto según el artículo 46 de la Ley 1480 de 2011 — el detalle está en la sección de garantía de esta misma página y en <a href="/terminos/" style="color:var(--navy); font-weight:600;">/terminos/</a>.</p>
+      </details>
     </div>
   </div>
 </section>
