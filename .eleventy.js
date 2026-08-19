@@ -4,6 +4,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/css": "assets/css" });
   eleventyConfig.addPassthroughCopy({ "src/assets/js": "assets/js" });
   eleventyConfig.addPassthroughCopy({ "src/assets/img": "assets/img" });
+  // Fuentes auto-hospedadas (ENC-0019, frente "velocidad de carga"). El nombre de carpeta
+  // es "webfonts", no "fonts": el directorio "src/assets/fonts" quedó en un estado de bloqueo
+  // de Google Drive File Stream tras un primer intento fallido de checkout (Acceso denegado
+  // a nivel de Windows incluso con icacls/takeown/rd, confirmado con tres herramientas
+  // distintas) y no se pudo recuperar ni borrar. Se documenta en vez de reintentar más:
+  // ver ENC-0019, sección Trabajo, 2026-08-19.
+  eleventyConfig.addPassthroughCopy({ "src/assets/webfonts": "assets/webfonts" });
   eleventyConfig.addPassthroughCopy({ "public/_headers": "_headers" });
   eleventyConfig.addPassthroughCopy({ "public/_redirects": "_redirects" });
 

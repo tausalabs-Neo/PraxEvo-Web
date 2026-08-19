@@ -1,8 +1,15 @@
 ---
 layout: base.njk
-title: "Sobre nosotros"
-description: "PraxEvo nace de la práctica real: más de 15 años operando CX y procesos en aviación de bajo costo y fintech de alto volumen, ahora al alcance de las pymes de LatAm."
+title: "Fundadores y trayectoria en aviación y fintech"
+description: "Los fundadores de PraxEvo: más de 15 años operando procesos y experiencia de cliente en aerolínea de bajo costo y fintech de alto volumen."
 permalink: /nosotros/
+faq:
+  - q: "¿Quiénes fundaron PraxEvo?"
+    a: "John Steven Santana y Viviana Ricardo."
+  - q: "¿De dónde viene el método de PraxEvo?"
+    a: "De la operación real: más de 15 años en una aerolínea de bajo costo y en una fintech de alto volumen, antes de convertirse en curso o consultoría."
+  - q: "¿PraxEvo es una agencia de marketing o una escuela de motivación?"
+    a: "No. No es una agencia de marketing —el contenido existe para vender método, no como producto— ni una escuela de motivación: el público objetivo ya tiene un negocio y quiere que funcione mejor."
 ---
 <section class="page-hero">
   <div class="wrap">
@@ -19,6 +26,15 @@ permalink: /nosotros/
     </div>
     <p style="font-size:15.5px; line-height:1.75; color:var(--carbon); max-width:720px; margin-bottom:16px;">PraxEvo nació de una frustración simple: la mayoría de la consultoría que se ofrece a las pymes latinoamericanas es teórica, importada de contextos que no aplican, o demasiado cara para ser accesible.</p>
     <p style="font-size:15.5px; line-height:1.75; color:var(--carbon); max-width:720px;">Después de años operando experiencia de cliente y procesos en sectores como aviación de bajo costo y fintech de alto volumen, decidimos empaquetar ese conocimiento en cursos y consultoría prácticos — al alcance de negocios reales.</p>
+  </div>
+</section>
+
+{# TL;DR — ENC-0020/HO-38. Fuente: nosotros.njk, secciones "Nuestra historia" y "Misión", ya publicadas y verificadas en vivo. #}
+<section class="block" style="padding-top:0;">
+  <div class="wrap" style="max-width:760px;">
+    <p style="font-size:15px; line-height:1.7; color:var(--carbon); background:var(--white); border-left:3px solid var(--green); padding:18px 22px;">
+      <strong>En resumen:</strong> PraxEvo lo fundan John Steven Santana y Viviana Ricardo, con más de 15 años operando procesos y experiencia de cliente en una aerolínea de bajo costo y una fintech de alto volumen — antes de convertir ese método en cursos y consultoría. La misión es que las pymes latinoamericanas operen con la misma disciplina que una compañía grande, sin necesitar su presupuesto.
+    </p>
   </div>
 </section>
 
@@ -56,18 +72,25 @@ permalink: /nosotros/
       </div>
       {% endfor %}
     </div>
+    <p style="font-size:14px; color:var(--carbon); margin-top:22px;">Ese método es el mismo que sostiene el <a href="/cursos/" style="font-weight:600; color:var(--navy);">curso</a> y los proyectos de <a href="/consultoria/" style="font-weight:600; color:var(--navy);">consultoría</a>.</p>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
+    {# Hallazgo de Marca y Contenido (ENC-0020/HO-38): "Misión" y "Visión" no llevaban
+       ningún tag de encabezado real — eran <p style="..."> con apariencia visual de
+       título, invisibles como estructura para buscadores y lectores de pantalla
+       (nosotros.njk, líneas 66-72 antes de este cambio). Se corrige la etiqueta HTML;
+       el texto no cambia, sigue siendo el que ya estaba publicado. #}
+    <h2 style="font-size:clamp(22px,3vw,26px); margin-bottom:20px;">Misión y visión</h2>
     <div class="grid grid-2">
       <div>
-        <p style="font-family:var(--font-display); font-weight:700; font-size:20px; color:var(--navy); margin-bottom:12px;">Misión</p>
+        <h3 style="font-family:var(--font-display); font-weight:700; font-size:20px; color:var(--navy); margin-bottom:12px;">Misión</h3>
         <p style="font-size:14.5px; line-height:1.7; color:var(--carbon);">Que las pymes latinoamericanas operen con la misma disciplina que las grandes compañías — sin necesitar su presupuesto.</p>
       </div>
       <div>
-        <p style="font-family:var(--font-display); font-weight:700; font-size:20px; color:var(--navy); margin-bottom:12px;">Visión</p>
+        <h3 style="font-family:var(--font-display); font-weight:700; font-size:20px; color:var(--navy); margin-bottom:12px;">Visión</h3>
         <p style="font-size:14.5px; line-height:1.7; color:var(--carbon);">Ser la referencia en CX y operaciones para pymes de habla hispana, dentro y fuera de LatAm.</p>
       </div>
     </div>
@@ -91,6 +114,26 @@ permalink: /nosotros/
         <p style="font-size:13.5px; line-height:1.6; color:var(--carbon);">{{ v.desc }}</p>
       </div>
       {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap" style="max-width:760px;">
+    <h2 style="font-size:clamp(24px,3vw,30px); margin-bottom:24px;">Preguntas frecuentes</h2>
+    <div style="display:flex; flex-direction:column; gap:20px;">
+      <div>
+        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿Quiénes fundaron PraxEvo?</h3>
+        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">John Steven Santana y Viviana Ricardo.</p>
+      </div>
+      <div>
+        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿De dónde viene el método de PraxEvo?</h3>
+        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">De la operación real: más de 15 años en una aerolínea de bajo costo y en una fintech de alto volumen, antes de convertirse en curso o consultoría.</p>
+      </div>
+      <div>
+        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿PraxEvo es una agencia de marketing o una escuela de motivación?</h3>
+        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">No. No es una agencia de marketing —el contenido existe para vender método, no como producto— ni una escuela de motivación: el público objetivo ya tiene un negocio y quiere que funcione mejor.</p>
+      </div>
     </div>
   </div>
 </section>

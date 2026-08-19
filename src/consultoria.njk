@@ -1,14 +1,39 @@
 ---
 layout: base.njk
-title: "Consultoría — PraxEvo Consulting"
-description: "Consultoría en CX y Operaciones para pymes que quieren escalar sin perder calidad. Diagnóstico, diseño e implementación con acompañamiento directo."
+title: "Consultoría de operaciones para pymes"
+description: "Diagnóstico, diseño e implementación para que tu pyme opere mejor, con seguimiento medido. Cotización por proyecto, sin retainer obligatorio."
 permalink: /consultoria/
+faq:
+  - q: "¿Cuánto cuesta una consultoría de procesos?"
+    a: "Se cotiza por proyecto, según el alcance real de tu operación — no hay tarifa publicada de catálogo todavía. Agenda un diagnóstico gratuito para tener un número concreto."
+  - q: "¿Cómo es el proceso, paso a paso?"
+    a: "Diagnóstico (mapeamos tu operación actual), Diseño (el proceso objetivo y el plan, priorizado por impacto), Implementación (acompañamiento directo con tu equipo) y Medición (resultados contra la línea base)."
+  - q: "¿Necesito contrato de permanencia (retainer)?"
+    a: "No. Se cotiza por proyecto, sin retainer obligatorio."
+  - q: "¿En qué se diferencia esto de contratar una consultora grande?"
+    a: "El método viene de haberlo operado, no de un marco teórico: se probó en una aerolínea de bajo costo y en una fintech de alto volumen antes de adaptarse a una pyme. PraxEvo no compite por licitación corporativa ni por transformación total de C-suite — trabaja por unidad de negocio o proceso concreto, con resultado medible."
 ---
 <section class="page-hero orange-kicker">
   <div class="wrap">
     <p class="kicker">PraxEvo Consulting</p>
-    <h1>Consultoría en CX y Operaciones para pymes que quieren escalar sin perder calidad.</h1>
+    <h1>Diagnóstico, diseño e implementación para que tu operación no dependa de improvisar</h1>
     <p>Diagnóstico, diseño e implementación — entregables concretos, no presentaciones. Cotización por proyecto, sin retainer obligatorio.</p>
+    {# CTA temprano — ENC-0020/HO-38, frente 5. Hallazgo propio de Marca y Contenido: de las
+       cinco páginas priorizadas, Consultoría era la única cuyo page-hero no tenía ningún botón
+       de acción. Reutiliza literalmente la etiqueta que ya existe en el CTA final de esta misma
+       página y en el de Cursos, mismo texto en los tres lugares, consistencia de marca. #}
+    <div class="cta-row" style="margin-top:20px;">
+      <a href="/contacto/" class="btn btn-primary">Agenda un diagnóstico gratuito</a>
+    </div>
+  </div>
+</section>
+
+{# TL;DR — ENC-0020/HO-38. Fuente: proceso real de 4 pasos ya publicado abajo. #}
+<section class="block" style="padding-bottom:0;">
+  <div class="wrap" style="max-width:760px;">
+    <p style="font-size:15px; line-height:1.7; color:var(--carbon); background:var(--bg-light); border-left:3px solid var(--green); padding:18px 22px;">
+      <strong>En resumen:</strong> diagnóstico, diseño, implementación acompañada y medición contra la línea base — un proceso de cuatro pasos, cotizado por proyecto, sin retainer obligatorio. El método viene de haberlo operado en una aerolínea de bajo costo y en una fintech de alto volumen antes de adaptarlo a una pyme.
+    </p>
   </div>
 </section>
 
@@ -31,6 +56,7 @@ permalink: /consultoria/
       </div>
       {% endfor %}
     </div>
+    <p style="font-size:14px; color:var(--carbon); margin-top:22px;">¿Quieres aplicar el primer paso tú mismo antes de contratar? El <a href="/cursos/" style="font-weight:600; color:var(--navy);">curso</a> cubre el mismo método, a tu ritmo. El diagnóstico empieza igual que en <a href="/mide-tu-caos/" style="font-weight:600; color:var(--navy);">Mide tu caos en 30 minutos</a>: un proceso, diez casos, dos números.</p>
   </div>
 </section>
 
@@ -71,6 +97,30 @@ permalink: /consultoria/
     <p class="eyebrow">Nuestra credencial</p>
     <p style="font-family:var(--font-display); font-weight:700; font-size:clamp(20px,3vw,26px); color:var(--green); max-width:680px; line-height:1.4; margin:14px 0 12px;">"Este método se probó en aviación de bajo costo y en fintech de alto volumen. Aquí está cómo lo adaptas a tu negocio."</p>
     <p style="font-size:13.5px; color:var(--white-40);">Años de experiencia operativa en sectores de alta exigencia, ahora al alcance de tu pyme.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap" style="max-width:760px;">
+    <h2 style="font-size:clamp(24px,3vw,30px); margin-bottom:24px;">Preguntas frecuentes</h2>
+    <div style="display:flex; flex-direction:column; gap:20px;">
+      <div>
+        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿Cuánto cuesta una consultoría de procesos?</h3>
+        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">Se cotiza por proyecto, según el alcance real de tu operación — no hay tarifa publicada de catálogo todavía. Agenda un diagnóstico gratuito para tener un número concreto.</p>
+      </div>
+      <div>
+        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿Cómo es el proceso, paso a paso?</h3>
+        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">Diagnóstico (mapeamos tu operación actual), Diseño (el proceso objetivo y el plan, priorizado por impacto), Implementación (acompañamiento directo con tu equipo) y Medición (resultados contra la línea base).</p>
+      </div>
+      <div>
+        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿Necesito contrato de permanencia (retainer)?</h3>
+        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">No. Se cotiza por proyecto, sin retainer obligatorio.</p>
+      </div>
+      <div>
+        <h3 style="font-size:16px; color:var(--navy); margin-bottom:6px;">¿En qué se diferencia esto de contratar una consultora grande?</h3>
+        <p style="font-size:14.5px; line-height:1.6; color:var(--carbon);">El método viene de haberlo operado, no de un marco teórico: se probó en una aerolínea de bajo costo y en una fintech de alto volumen antes de adaptarse a una pyme. PraxEvo no compite por licitación corporativa ni por transformación total de C-suite — trabaja por unidad de negocio o proceso concreto, con resultado medible.</p>
+      </div>
+    </div>
   </div>
 </section>
 

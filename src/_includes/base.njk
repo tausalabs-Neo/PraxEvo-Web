@@ -21,27 +21,66 @@
 <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
 <link rel="alternate icon" href="/assets/img/logo-praxevo.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+{# Fuentes auto-hospedadas (ENC-0019, frente "velocidad de carga") — antes había
+   preconnect + <link> a fonts.googleapis.com/fonts.gstatic.com aquí, cadena crítica
+   de 3 niveles (~1.211ms) que explicaba que FCP/LCP/Speed Index/TTI estuvieran los
+   cuatro clavados en 3,3s en la línea base del 2026-07-27. Los @font-face ahora viven
+   en styles.css, servidos desde /assets/webfonts/ (propio dominio), con font-display:
+   swap. Los tres archivos son réplica byte a byte de lo que servía Google Fonts —
+   verificado con `cmp` contra fonts.gstatic.com el 2026-08-19, ver ENC-0019. #}
 <link rel="stylesheet" href="/assets/css/styles.css?v={{ assetVersion }}">
 
 {% if organizationSchema %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": ["Organization", "ProfessionalService"],
   "name": "PraxEvo",
   "alternateName": "Prax-Evo",
   "url": "https://somospraxevo.com",
   "logo": "https://somospraxevo.com/assets/img/logo-praxevo.png",
-  "description": "PraxEvo transforma cómo operan y atienden las pymes de LatAm, con metodología de CX y operaciones probada en aviación y fintech.",
+  "image": "https://somospraxevo.com/assets/img/logo-praxevo.png",
+  "description": "PraxEvo transforma cómo operan y atienden las pymes de LatAm, con metodología de operaciones, procesos y experiencia del cliente probada en aviación y fintech.",
   "email": "hola@somospraxevo.com",
   "areaServed": "LatAm",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bogotá",
+    "addressCountry": "CO"
+  },
   "sameAs": [
     "https://instagram.com/praxevo",
     "https://tiktok.com/@praxevo",
     "https://youtube.com/@praxevo"
+  ]
+}
+</script>
+{# Nota de esta área, ENC-0019, frente 3 "Negocio Local": ProfessionalService es
+   subtipo de LocalBusiness en el vocabulario de schema.org, combinado aquí con
+   Organization en el mismo bloque @type. PraxEvo no es un local con dirección
+   visitable — es un servicio remoto en LatAm — de ahí el subtipo. Sin "telephone":
+   el teléfono del responsable es INS-0029, pendiente de Legal y Riesgo, no se
+   inventa aquí. Sin "streetAddress": no existe ninguna dirección de calle publicada;
+   solo se afirma lo que ya está publicado en el sitio (Bogotá, Colombia — footer y
+   /contacto/). #}
+{% endif %}
+
+{% if faq %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {%- for item in faq %}
+    {
+      "@type": "Question",
+      "name": {{ item.q | dump | safe }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ item.a | dump | safe }}
+      }
+    }{% if not loop.last %},{% endif %}
+    {%- endfor %}
   ]
 }
 </script>
@@ -57,6 +96,16 @@
 </main>
 
 {% include "partials/footer.njk" %}
+
+{% if page.url != "/contacto/" %}
+{# CTA fijo (sticky) en móvil — ENC-0019, frente 5 técnico. Oculto en /contacto/
+   para no competir con el botón "Enviar mensaje" del propio formulario, que ya
+   cumple el mismo rol en esa página. Se oculta también con el menú móvil abierto
+   (regla en styles.css) para no apilar dos elementos fijos, y en impresión. #}
+<div class="mobile-sticky-cta">
+  <a href="/contacto/" class="btn btn-primary">Agenda una consultoría</a>
+</div>
+{% endif %}
 
 <script src="/assets/js/main.js?v={{ assetVersion }}" defer></script>
 {% if page.url == "/contacto/" %}
