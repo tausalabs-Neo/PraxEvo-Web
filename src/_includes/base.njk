@@ -7,6 +7,23 @@
 <meta name="description" content="{{ description }}">
 <link rel="canonical" href="https://somospraxevo.com{{ page.url }}">
 
+{# Transición de página nativa (ENC-0031, Parte A, movimiento alto) — API
+   View Transitions cross-document, cero JavaScript. Se declara SOLO cuando
+   la plantilla que llama a este layout trae `viewTransition: true` en su
+   front matter — hoy, únicamente index.njk — así que solo las navegaciones
+   que entran o salen de Home la disparan, como pide la especificación.
+   Progressive enhancement puro: en un navegador sin soporte, la navegación
+   cae al comportamiento por defecto sin error ni JS de respaldo. #}
+{% if viewTransition %}
+<style>@view-transition { navigation: auto; }</style>
+{% endif %}
+
+{# Reveal de sección (ENC-0031, Parte A, movimiento moderado) — si JavaScript
+   está desactivado, main.js nunca corre para quitar el estado oculto de
+   [data-reveal]; esta regla evita que el sitio se quede con secciones
+   invisibles para quien navega sin JS. #}
+<noscript><style>[data-reveal]{opacity:1!important;transform:none!important;}</style></noscript>
+
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PraxEvo">
 <meta property="og:title" content="{{ title }} · PraxEvo">
