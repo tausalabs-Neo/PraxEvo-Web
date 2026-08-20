@@ -74,7 +74,7 @@ faq:
 
 {# H2 "Qué te llevas, módulo por módulo" — ENC-0020/HO-38. Fuente íntegra: ENC-0001,
    tabla de estructura de los 8 módulos, aprobada por Steve 2026-08-03. Las cifras de
-   los casos (VivAir, fintech) miden eficiencia operativa — tiempo de ciclo, tasa de
+   los casos (aerolínea de bajo costo, fintech) miden eficiencia operativa — tiempo de ciclo, tasa de
    error, tiempo de detección — nunca retención, NPS ni recompra del cliente final. #}
 <section class="block bg-light">
   <div class="wrap">
@@ -91,11 +91,11 @@ faq:
         </thead>
         <tbody>
           {% for m in [
-            { n: 1, name: "Nombra el caos", entrega: "Mapa del proceso \"como es hoy\", mínimo 3 pasos y roles", caso: "VivAir: cobranza levantada de voz, sin matriz, facturación de 4 días" },
+            { n: 1, name: "Nombra el caos", entrega: "Mapa del proceso \"como es hoy\", mínimo 3 pasos y roles", caso: "Aerolínea de bajo costo: cobranza levantada de voz, sin matriz, facturación de 4 días" },
             { n: 2, name: "Mide antes de arreglar", entrega: "Tiempo de ciclo y tasa de error del proceso, \"antes\"", caso: "Fintech (500K/mes): nadie medía ciclos ni errores antes del rediseño" },
-            { n: 3, name: "Escribe el proceso en 4 pasos", entrega: "Un procedimiento corto y ejecutable por cualquiera del equipo", caso: "VivAir: rediseño a 4 pasos, ciclo de 4 días a 1 día" },
-            { n: 4, name: "Fija un SLA que puedas cumplir", entrega: "Un SLA numérico y realista, con plazo y % de cumplimiento", caso: "VivAir (cobranza 48h) y fintech (95% en 48h)" },
-            { n: 5, name: "Construye la matriz de decisión", entrega: "Qué hacer en los casos excepcionales, sin depender de una persona", caso: "VivAir: matriz que reemplazó el criterio informal de cada cobrador" },
+            { n: 3, name: "Escribe el proceso en 4 pasos", entrega: "Un procedimiento corto y ejecutable por cualquiera del equipo", caso: "Aerolínea de bajo costo: rediseño a 4 pasos, ciclo de 4 días a 1 día" },
+            { n: 4, name: "Fija un SLA que puedas cumplir", entrega: "Un SLA numérico y realista, con plazo y % de cumplimiento", caso: "Aerolínea de bajo costo (cobranza 48h) y fintech (95% en 48h)" },
+            { n: 5, name: "Construye la matriz de decisión", entrega: "Qué hacer en los casos excepcionales, sin depender de una persona", caso: "Aerolínea de bajo costo: matriz que reemplazó el criterio informal de cada cobrador" },
             { n: 6, name: "Cierra los handoffs débiles", entrega: "Mapa de traspasos entre roles y su punto de fuga", caso: "Fintech (500K/mes): handoffs débiles entre cobranza, retry, disputa, refund, onboarding" },
             { n: 7, name: "Monta un tablero semanal", entrega: "2-3 métricas del proceso y su ritmo de revisión", caso: "Fintech: medición semanal asociada a -30% de ciclo y -50% de errores de auditoría" },
             { n: 8, name: "Detecta antes de que el cliente lo sienta", entrega: "Un indicador de cara al cliente que te comprometes a monitorear", caso: "Fintech 2M+/mes: tiempo de detección de incidentes de 48h a 4h" }

@@ -356,7 +356,7 @@ section.block { padding: clamp(56px, 8vw, 96px) 0; }
 .hero .proof .n { font-family: var(--font-impact); font-size: 64px; color: var(--green); letter-spacing: 1px; line-height: 1; }
 .hero .proof .n-suffix { font-family: var(--font-body); font-size: 18px; font-weight: 600; letter-spacing: 0; margin-left: 4px; }
 .hero .proof .label { font-family: var(--font-body); font-size: 22px; font-weight: 700; color: var(--white); line-height: 1; }
-.hero .proof .t { font-size: 12.5px; color: var(--white-40); margin-top: 6px; }
+.hero .proof .t { font-size: 12.5px; color: var(--white-70); margin-top: 6px; }
 
 .page-hero {
   background: var(--navy); color: var(--white);
